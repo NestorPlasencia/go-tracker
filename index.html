@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17231d" />
+    <title>Mapa del evento</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><circle cx=%2232%22 cy=%2232%22 r=%2230%22 fill=%22%2317231d%22/><circle cx=%2232%22 cy=%2232%22 r=%2211%22 fill=%22%23d4b878%22/></svg>" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar home-topbar">
+      <div>
+        <p class="eyebrow">Navegación del evento</p>
+        <h1>Encuentra tu destino</h1>
+      </div>
+      <span class="home-topbar__place">Washington, D.C.</span>
+    </header>
+
+    <main class="home-main">
+      <section class="home-hero" aria-labelledby="destinations-title">
+        <div class="home-hero__copy">
+          <p class="eyebrow">Ruta peatonal</p>
+          <h2 id="destinations-title">¿A dónde quieres ir?</h2>
+          <p>Selecciona un nodo y abriremos el mapa con la mejor ruta desde tu ubicación.</p>
+        </div>
+
+      </section>
+
+      <section class="destinations-section" aria-label="Nodos disponibles">
+        <div id="route-buttons" class="route-buttons destination-grid"></div>
+      </section>
+
+      <footer class="home-footer">
+        <span>4 destinos</span>
+        <span>Rutas peatonales</span>
+        <span>GPS en tiempo real</span>
+      </footer>
+    </main>
+
+    <section
+      id="map-modal"
+      class="map-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="map-modal-title"
+    >
+      <header class="map-modal__header">
+        <div>
+          <p class="eyebrow">Ruta seleccionada</p>
+          <h2 id="map-modal-title">Mapa del evento</h2>
+          <p id="route-summary" class="route-summary">
+            Preparando la red peatonal…
+          </p>
+        </div>
+        <button id="close-map-button" class="close-map-button" type="button" aria-label="Cerrar mapa">
+          <span aria-hidden="true">×</span>
+          <span class="close-map-button__text">Cerrar</span>
+        </button>
+      </header>
+
+      <div class="map-modal__body">
+        <div id="map" aria-label="Mapa interactivo del área del evento"></div>
+
+        <aside class="map-location-panel">
+          <div class="location-card map-location-card">
+            <span id="location-status-dot" class="map-card__dot is-idle" aria-hidden="true"></span>
+            <div>
+              <strong id="location-status-title">Ubicación aún no solicitada</strong>
+              <span id="location-status-message">La pediremos para calcular la ruta.</span>
+            </div>
+          </div>
+        </aside>
+
+        <nav id="external-map-actions" class="external-map-actions" aria-label="Abrir ruta en otra aplicación">
+          <span>Continuar ruta en</span>
+          <div>
+            <a
+              id="google-maps-link"
+              class="external-map-link external-map-link--google"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Google Maps</a>
+            <a
+              id="apple-maps-link"
+              class="external-map-link external-map-link--apple"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Apple Maps</a>
+          </div>
+        </nav>
+
+        <div id="location-loading" class="location-loading" role="status" aria-live="polite">
+          <span class="location-loading__spinner" aria-hidden="true"></span>
+          <strong>Obteniendo tu ubicación</strong>
+          <span>Esto puede tardar unos segundos…</span>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
