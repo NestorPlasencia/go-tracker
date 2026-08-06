@@ -23,10 +23,33 @@ Luego abre `http://127.0.0.1:8080`.
 
 Vercel servirá el sitio mediante HTTPS, requisito necesario para solicitar la ubicación GPS en navegadores móviles.
 
-## Archivos cartográficos
+## Estructura modular de demos
 
-- `map.webp`: mapa base estático.
-- `walkways-osm.geojson`: aceras, cruces y caminos peatonales.
-- `app.js`: nodos, seguimiento GPS y cálculo de rutas.
+El motor compartido vive en `app.js`. El demo activo se selecciona con el
+parámetro `demo`, por ejemplo:
+
+```text
+https://tu-dominio.vercel.app/?demo=washington-dc
+```
+
+Cada demo mantiene sus datos y recursos dentro de su propia carpeta:
+
+```text
+demos/
+  manifest.json
+  washington-dc/
+    data.json
+    map.webp
+    walkways-osm.json
+```
+
+- `data.json`: nombre, límites, niveles de zoom, nodos y rutas de los recursos.
+- `map.webp`: imagen del mapa base correspondiente a esos límites.
+- `walkways-osm.json`: aceras, cruces y caminos peatonales en GeoJSON.
+- `demos/manifest.json`: demos disponibles y demo predeterminado.
+
+Para crear otro demo, copia la carpeta `washington-dc`, reemplaza sus tres
+archivos y registra el nuevo `id` y la ruta a su `data.json` en el manifiesto.
+No es necesario duplicar ni modificar `index.html` o `app.js`.
 
 Los datos y el mapa derivados de OpenStreetMap deben conservar la atribución visible a OpenStreetMap contributors.

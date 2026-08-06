@@ -1,0 +1,45 @@
+{
+  "version": "2026-08-06-node-navigation",
+  "title": "Mapa del evento",
+  "eyebrow": "Navegación del evento",
+  "place": "Washington, D.C.",
+  "mapAlt": "Mapa del área del evento basado en OpenStreetMap",
+  "locale": "es",
+  "bounds": {
+    "southWest": [38.90365, -77.04184],
+    "northEast": [38.91126, -77.02946]
+  },
+  "mapOptions": {
+    "minZoom": 15,
+    "maxZoom": 20,
+    "maxBoundsPadding": 0.15,
+    "locationZoom": 18,
+    "routeMaxZoom": 18
+  },
+  "assets": {
+    "map": "map.webp",
+    "walkways": "walkways-osm.json"
+  },
+  "nodes": [
+    {
+      "id": "whole-foods",
+      "name": "Whole foods",
+      "coordinates": [38.909376791183966, -77.03395139898984]
+    },
+    {
+      "id": "wawa",
+      "name": "Wawa",
+      "coordinates": [38.90538761236542, -77.03249100401345]
+    },
+    {
+      "id": "home",
+      "name": "Home",
+      "coordinates": [38.90657431085857, -77.03554899423554]
+    },
+    {
+      "id": "embassy",
+      "name": "Embassy",
+      "coordinates": [38.90775958187091, -77.03872911695505]
+    }
+  ]
+}

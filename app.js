@@ -1,38 +1,23 @@
+const DEMO_CONFIG = window.ACTIVE_DEMO;
 const MAP_BOUNDS = L.latLngBounds(
-  [38.90365, -77.04184],
-  [38.91126, -77.02946],
+  DEMO_CONFIG.bounds.southWest,
+  DEMO_CONFIG.bounds.northEast,
 );
+const EVENT_NODES = DEMO_CONFIG.nodes;
+const MAP_OPTIONS = DEMO_CONFIG.mapOptions || {};
 
-const EVENT_NODES = [
-  {
-    id: "whole-foods",
-    name: "Whole foods",
-    coordinates: [38.909376791183966, -77.03395139898984],
-  },
-  {
-    id: "wawa",
-    name: "Wawa",
-    coordinates: [38.90538761236542, -77.03249100401345],
-  },
-  {
-    id: "home",
-    name: "Home",
-    coordinates: [38.90657431085857, -77.03554899423554],
-  },
-  {
-    id: "embassy",
-    name: "Embassy",
-    coordinates: [38.90775958187091, -77.03872911695505],
-  },
-  
-];
+document.title = DEMO_CONFIG.title;
+document.querySelector("#event-eyebrow").textContent = DEMO_CONFIG.eyebrow;
+document.querySelector("#event-place").textContent = DEMO_CONFIG.place;
+document.querySelector("#destination-count").textContent =
+  `${EVENT_NODES.length} ${EVENT_NODES.length === 1 ? "destino" : "destinos"}`;
 
 const map = L.map("map", {
   attributionControl: false,
-  maxBounds: MAP_BOUNDS.pad(0.15),
+  maxBounds: MAP_BOUNDS.pad(MAP_OPTIONS.maxBoundsPadding ?? 0.15),
   maxBoundsViscosity: 0.8,
-  minZoom: 15,
-  maxZoom: 20,
+  minZoom: MAP_OPTIONS.minZoom ?? 15,
+  maxZoom: MAP_OPTIONS.maxZoom ?? 20,
   zoomControl: true,
 });
 
@@ -40,9 +25,9 @@ map.createPane("baseImage");
 map.getPane("baseImage").style.zIndex = 200;
 map.getPane("baseImage").style.pointerEvents = "none";
 
-L.imageOverlay("map.webp", MAP_BOUNDS, {
+L.imageOverlay(DEMO_CONFIG.assets.map, MAP_BOUNDS, {
   pane: "baseImage",
-  alt: "Mapa del área del evento basado en OpenStreetMap",
+  alt: DEMO_CONFIG.mapAlt,
   interactive: false,
 }).addTo(map);
 
@@ -339,7 +324,7 @@ function findShortestPath(graph, startKey, endKey) {
 let walkingGraph;
 let graphLoadError;
 
-fetch("walkways-osm.geojson")
+fetch(DEMO_CONFIG.assets.walkways)
   .then((response) => {
     if (!response.ok) {
       throw new Error(`No se pudo cargar el GeoJSON (${response.status})`);
@@ -361,7 +346,7 @@ fetch("walkways-osm.geojson")
     if (pendingRouteNode && userCoordinates) {
       calculateWalkingRoute(pendingRouteNode);
     } else {
-      routeSummary.textContent = `Red lista: ${walkingGraph.nodes.size.toLocaleString("es")} puntos transitables.`;
+      routeSummary.textContent = `Red lista: ${walkingGraph.nodes.size.toLocaleString(DEMO_CONFIG.locale || "es")} puntos transitables.`;
     }
   })
   .catch((error) => {
@@ -411,13 +396,34 @@ EVENT_NODES.forEach((node, index) => {
     className: "event-node-label",
   });
 
-  marker.bindPopup(`
-    <article class="node-popup">
-      <span>Nodo ${nodeNumber}</span>
-      <strong>${node.name}</strong>
-      <small>${node.coordinates[0].toFixed(6)}, ${node.coordinates[1].toFixed(6)}</small>
-    </article>
-  `);
+  marker.bindPopup(
+    `
+      <article class="node-popup">
+        <span>Nodo ${nodeNumber}</span>
+        <strong>${node.name}</strong>
+        <small>${node.coordinates[0].toFixed(6)}, ${node.coordinates[1].toFixed(6)}</small>
+        <button class="node-popup__navigate" type="button">
+          Navegar a este nodo
+        </button>
+      </article>
+    `,
+    {
+      className: "event-node-popup",
+      minWidth: 210,
+      maxWidth: 260,
+      autoPanPadding: [24, 24],
+    },
+  );
+
+  marker.on("popupopen", (event) => {
+    const navigateButton = event.popup
+      .getElement()
+      ?.querySelector(".node-popup__navigate");
+
+    navigateButton?.addEventListener("click", () => navigateToNode(node), {
+      once: true,
+    });
+  });
 });
 
 const locationStatusDot = document.querySelector("#location-status-dot");
@@ -503,7 +509,11 @@ function showUserLocation(position) {
     hasAdjustedInitialLocation = true;
 
     if (isInsideEvent) {
-      map.setView(coordinates, Math.max(map.getZoom(), 18), { animate: true });
+      map.setView(
+        coordinates,
+        Math.max(map.getZoom(), MAP_OPTIONS.locationZoom ?? 18),
+        { animate: true },
+      );
     } else {
       map.fitBounds(L.latLngBounds([coordinates, MAP_BOUNDS.getCenter()]), {
         padding: [50, 50],
@@ -704,7 +714,7 @@ function calculateWalkingRoute(node, options = {}) {
   if (fitMap && activeRoute.getBounds().isValid()) {
     map.fitBounds(activeRoute.getBounds(), {
       padding: [70, 70],
-      maxZoom: 18,
+      maxZoom: MAP_OPTIONS.routeMaxZoom ?? 18,
     });
   }
 }
@@ -732,11 +742,27 @@ function updateExternalMapLinks(node) {
   }
 }
 
-function openMapModal(node, triggerButton) {
-  lastFocusedRouteButton = triggerButton;
+function selectDestination(node) {
   activeDestinationNode = node;
   mapModalTitle.textContent = node.name;
   updateExternalMapLinks(node);
+
+  document.querySelectorAll(".route-button").forEach((button) => {
+    const isActive = button.dataset.nodeId === node.id;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function navigateToNode(node) {
+  selectDestination(node);
+  map.closePopup();
+  calculateWalkingRoute(node);
+}
+
+function openMapModal(node, triggerButton) {
+  lastFocusedRouteButton = triggerButton;
+  selectDestination(node);
   mapModal.classList.add("is-open");
   mapModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");

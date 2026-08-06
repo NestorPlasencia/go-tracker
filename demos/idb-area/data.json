@@ -1,0 +1,44 @@
+{
+  "title": "Mapa del evento",
+  "eyebrow": "Navegación del evento",
+  "place": "IDB Area",
+  "mapAlt": "Mapa del área del evento basado en OpenStreetMap",
+  "locale": "es",
+  "bounds": {
+    "southWest": [38.898247, -77.033735],
+    "northEast": [38.901395, -77.028000]
+  },
+  "mapOptions": {
+    "minZoom": 15,
+    "maxZoom": 20,
+    "maxBoundsPadding": 0.15,
+    "locationZoom": 18,
+    "routeMaxZoom": 18
+  },
+  "assets": {
+    "map": "map.webp",
+    "walkways": "walkways-osm.json"
+  },
+  "nodes": [
+    {
+      "id": "idb",
+      "name": "IDB",
+      "coordinates": [38.89972529914224, -77.03018131095722]
+    },
+    {
+      "id": "metro",
+      "name": "Metro",
+      "coordinates": [38.901165433699674, -77.03221500351745]
+    },
+    {
+      "id": "macys",
+      "name": "Macys",
+      "coordinates": [38.89856542305919, -77.02938486484103]
+    },
+    {
+      "id": "cheeseCakeFactory",
+      "name": "Cheese Cake Factory",
+      "coordinates": [38.90013525658117, -77.03335086429253]
+    }
+  ]
+}

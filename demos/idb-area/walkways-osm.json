@@ -1,0 +1,5468 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-08-06T14:25:28Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/171530231",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "I Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0271934,
+            38.9012635
+          ],
+          [
+            -77.0278779,
+            38.9012638
+          ],
+          [
+            -77.0279099,
+            38.9012592
+          ],
+          [
+            -77.0279699,
+            38.9012422
+          ],
+          [
+            -77.0279797,
+            38.9012359
+          ],
+          [
+            -77.0280035,
+            38.9012357
+          ]
+        ]
+      },
+      "id": "way/171530231"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/297444227",
+        "crossing": "uncontrolled",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "14th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0321356,
+            38.8983946
+          ],
+          [
+            -77.0321361,
+            38.8983254
+          ],
+          [
+            -77.0321362,
+            38.8982585
+          ]
+        ]
+      },
+      "id": "way/297444227"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/297444243",
+        "crossing": "uncontrolled",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "G Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0318321,
+            38.8984533
+          ],
+          [
+            -77.0319554,
+            38.8984534
+          ],
+          [
+            -77.0320749,
+            38.8984536
+          ]
+        ]
+      },
+      "id": "way/297444243"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/297446770",
+        "crossing": "traffic_signals",
+        "crossing:markings": "lines",
+        "crossing:signals": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "12th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0282113,
+            38.900813
+          ],
+          [
+            -77.0282126,
+            38.9007671
+          ],
+          [
+            -77.0282165,
+            38.9006335
+          ],
+          [
+            -77.0282182,
+            38.9005888
+          ]
+        ]
+      },
+      "id": "way/297446770"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/297446777",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "H Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0280032,
+            38.8999246
+          ],
+          [
+            -77.0279641,
+            38.8999249
+          ],
+          [
+            -77.0271974,
+            38.899923
+          ]
+        ]
+      },
+      "id": "way/297446777"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/297771342",
+        "crossing": "traffic_signals",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "14th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0321398,
+            38.9014201
+          ],
+          [
+            -77.0321438,
+            38.9013354
+          ],
+          [
+            -77.0321444,
+            38.9012638
+          ]
+        ]
+      },
+      "id": "way/297771342"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/297771357",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "layer": "-1",
+        "lit": "yes",
+        "street:name": "14th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0317883,
+            38.9002785
+          ],
+          [
+            -77.0317886,
+            38.9003084
+          ],
+          [
+            -77.0317921,
+            38.9012181
+          ]
+        ]
+      },
+      "id": "way/297771357"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/298169244",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "15th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0335073,
+            38.9014207
+          ],
+          [
+            -77.0335074,
+            38.9013366
+          ],
+          [
+            -77.0335074,
+            38.9012652
+          ]
+        ]
+      },
+      "id": "way/298169244"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/298814312",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0302493,
+            38.9001337
+          ],
+          [
+            -77.0301632,
+            38.9000837
+          ],
+          [
+            -77.0300521,
+            38.900024
+          ],
+          [
+            -77.0299864,
+            38.8999874
+          ]
+        ]
+      },
+      "id": "way/298814312"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/298814318",
+        "crossing": "traffic_signals",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297963,
+            38.9002951
+          ],
+          [
+            -77.0297955,
+            38.9002182
+          ],
+          [
+            -77.0297945,
+            38.9001144
+          ],
+          [
+            -77.0297939,
+            38.9000531
+          ]
+        ]
+      },
+      "id": "way/298814318"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/298814319",
+        "crossing": "traffic_signals",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294821,
+            38.9004289
+          ],
+          [
+            -77.029624,
+            38.9003858
+          ],
+          [
+            -77.0297502,
+            38.9003474
+          ]
+        ]
+      },
+      "id": "way/298814319"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/298814322",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.029751,
+            38.8997043
+          ],
+          [
+            -77.0296279,
+            38.8997057
+          ],
+          [
+            -77.029503,
+            38.8997071
+          ]
+        ]
+      },
+      "id": "way/298814322"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/298814323",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294305,
+            38.8982569
+          ],
+          [
+            -77.0294307,
+            38.8983189
+          ],
+          [
+            -77.0294309,
+            38.8983951
+          ]
+        ]
+      },
+      "id": "way/298814323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/298814324",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297963,
+            38.9002951
+          ],
+          [
+            -77.0298079,
+            38.9003128
+          ],
+          [
+            -77.0298932,
+            38.9003111
+          ],
+          [
+            -77.0302057,
+            38.9003076
+          ],
+          [
+            -77.0306119,
+            38.9003038
+          ]
+        ]
+      },
+      "id": "way/298814324"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/298830755",
+        "crossing": "traffic_signals",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "14th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0321438,
+            38.8994257
+          ],
+          [
+            -77.032147,
+            38.8993771
+          ],
+          [
+            -77.0321527,
+            38.8992881
+          ],
+          [
+            -77.0321562,
+            38.8992331
+          ]
+        ]
+      },
+      "id": "way/298830755"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/298846442",
+        "crossing": "marked",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0337278,
+            38.8989355
+          ],
+          [
+            -77.0336385,
+            38.8989765
+          ],
+          [
+            -77.03354,
+            38.8990217
+          ]
+        ]
+      },
+      "id": "way/298846442"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371695363",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0299886,
+            38.8999445
+          ],
+          [
+            -77.0299409,
+            38.8999621
+          ],
+          [
+            -77.0297934,
+            38.9000163
+          ],
+          [
+            -77.0297488,
+            38.9000327
+          ]
+        ]
+      },
+      "id": "way/371695363"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371695370",
+        "crossing": "traffic_signals",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.032097,
+            38.8992031
+          ],
+          [
+            -77.0319464,
+            38.8992632
+          ],
+          [
+            -77.0318257,
+            38.8993114
+          ]
+        ]
+      },
+      "id": "way/371695370"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371695371",
+        "crossing": "traffic_signals",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0320803,
+            38.8994991
+          ],
+          [
+            -77.0319523,
+            38.8995422
+          ],
+          [
+            -77.0318211,
+            38.8995864
+          ]
+        ]
+      },
+      "id": "way/371695371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371695375",
+        "crossing": "traffic_signals",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "14th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0317751,
+            38.8993818
+          ],
+          [
+            -77.0317741,
+            38.8994206
+          ],
+          [
+            -77.0317718,
+            38.8995054
+          ],
+          [
+            -77.0317704,
+            38.8995583
+          ]
+        ]
+      },
+      "id": "way/371695375"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371695376",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0303001,
+            38.8998282
+          ],
+          [
+            -77.030247,
+            38.89985
+          ],
+          [
+            -77.0300684,
+            38.8999147
+          ],
+          [
+            -77.0299886,
+            38.8999445
+          ]
+        ]
+      },
+      "id": "way/371695376"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371695377",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0305484,
+            38.8999891
+          ],
+          [
+            -77.0305196,
+            38.8999562
+          ],
+          [
+            -77.0304486,
+            38.8998751
+          ],
+          [
+            -77.0304179,
+            38.89984
+          ]
+        ]
+      },
+      "id": "way/371695377"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371695378",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0305359,
+            38.9000512
+          ],
+          [
+            -77.0305011,
+            38.9000692
+          ],
+          [
+            -77.0304043,
+            38.9001197
+          ],
+          [
+            -77.0303589,
+            38.9001427
+          ]
+        ]
+      },
+      "id": "way/371695378"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371695380",
+        "crossing": "marked",
+        "crossing:markings": "ladder",
+        "foot": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "15th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0334634,
+            38.8989746
+          ],
+          [
+            -77.0334624,
+            38.8989151
+          ],
+          [
+            -77.033461,
+            38.8988325
+          ],
+          [
+            -77.0334603,
+            38.8987951
+          ]
+        ]
+      },
+      "id": "way/371695380"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371696609",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "I Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0335713,
+            38.9012184
+          ],
+          [
+            -77.0336401,
+            38.9012186
+          ],
+          [
+            -77.0337078,
+            38.9012187
+          ]
+        ]
+      },
+      "id": "way/371696609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371698395",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "I Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297486,
+            38.9012105
+          ],
+          [
+            -77.0297907,
+            38.9012099
+          ],
+          [
+            -77.0298391,
+            38.9012359
+          ],
+          [
+            -77.0317595,
+            38.9012307
+          ],
+          [
+            -77.0317921,
+            38.9012181
+          ],
+          [
+            -77.0318307,
+            38.9012178
+          ]
+        ]
+      },
+      "id": "way/371698395"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371698398",
+        "crossing": "uncontrolled",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "source": "Bing",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294728,
+            38.9012828
+          ],
+          [
+            -77.0294721,
+            38.9013414
+          ],
+          [
+            -77.0294713,
+            38.9014
+          ]
+        ]
+      },
+      "id": "way/371698398"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371705805",
+        "crossing": "traffic_signals",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297488,
+            38.9000327
+          ],
+          [
+            -77.0296196,
+            38.9000752
+          ],
+          [
+            -77.029487,
+            38.9001188
+          ]
+        ]
+      },
+      "id": "way/371705805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371705808",
+        "crossing": "uncontrolled",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "source": "Bing",
+        "street:name": "I Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0280035,
+            38.9012357
+          ],
+          [
+            -77.0281028,
+            38.901236
+          ],
+          [
+            -77.0281681,
+            38.9012363
+          ]
+        ]
+      },
+      "id": "way/371705808"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371705818",
+        "crossing": "traffic_signals",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294453,
+            38.900161
+          ],
+          [
+            -77.0294431,
+            38.9002141
+          ],
+          [
+            -77.0294377,
+            38.9003434
+          ],
+          [
+            -77.0294353,
+            38.9004019
+          ]
+        ]
+      },
+      "id": "way/371705818"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371708228",
+        "crossing": "traffic_signals",
+        "crossing:markings": "lines",
+        "crossing:signals": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.028168,
+            38.9005578
+          ],
+          [
+            -77.0281052,
+            38.9005785
+          ],
+          [
+            -77.0280027,
+            38.9006128
+          ]
+        ]
+      },
+      "id": "way/371708228"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371708232",
+        "crossing": "traffic_signals",
+        "crossing:markings": "lines",
+        "crossing:signals": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0280034,
+            38.9009238
+          ],
+          [
+            -77.0281023,
+            38.9008883
+          ],
+          [
+            -77.0281692,
+            38.9008643
+          ]
+        ]
+      },
+      "id": "way/371708232"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371718617",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "G Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0321349,
+            38.8984212
+          ],
+          [
+            -77.0334772,
+            38.8984188
+          ]
+        ]
+      },
+      "id": "way/371718617"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371718625",
+        "crossing": "uncontrolled",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "14th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0317673,
+            38.8982568
+          ],
+          [
+            -77.031771,
+            38.8983233
+          ],
+          [
+            -77.0317749,
+            38.8983918
+          ]
+        ]
+      },
+      "id": "way/371718625"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371726806",
+        "crossing": "traffic_signals",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "I Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0318307,
+            38.9012178
+          ],
+          [
+            -77.0319504,
+            38.9012169
+          ],
+          [
+            -77.0320785,
+            38.901216
+          ]
+        ]
+      },
+      "id": "way/371726806"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/371726807",
+        "crossing": "traffic_signals",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "14th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0317599,
+            38.9012632
+          ],
+          [
+            -77.0317749,
+            38.9013391
+          ],
+          [
+            -77.0317906,
+            38.9014186
+          ]
+        ]
+      },
+      "id": "way/371726807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/375104524",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "smoothness": "good",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0318301,
+            38.9001287
+          ],
+          [
+            -77.0317909,
+            38.9001288
+          ],
+          [
+            -77.0314621,
+            38.9001295
+          ],
+          [
+            -77.0313497,
+            38.900117
+          ],
+          [
+            -77.0310732,
+            38.9001162
+          ],
+          [
+            -77.0308537,
+            38.900143
+          ],
+          [
+            -77.0308073,
+            38.9001457
+          ],
+          [
+            -77.0307578,
+            38.9001445
+          ],
+          [
+            -77.0307184,
+            38.9001399
+          ],
+          [
+            -77.03068,
+            38.9001301
+          ],
+          [
+            -77.0306418,
+            38.9001142
+          ],
+          [
+            -77.0306157,
+            38.9000985
+          ],
+          [
+            -77.030581,
+            38.9000691
+          ],
+          [
+            -77.0305537,
+            38.9000401
+          ]
+        ]
+      },
+      "id": "way/375104524"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/375104525",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "14th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0317883,
+            38.9002785
+          ],
+          [
+            -77.0317896,
+            38.9002204
+          ],
+          [
+            -77.0317909,
+            38.9001617
+          ]
+        ]
+      },
+      "id": "way/375104525"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/518035647",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0337472,
+            38.9001049
+          ],
+          [
+            -77.0336405,
+            38.9001064
+          ],
+          [
+            -77.0335499,
+            38.9001076
+          ]
+        ]
+      },
+      "id": "way/518035647"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/518035652",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0337076,
+            38.9003208
+          ],
+          [
+            -77.0336371,
+            38.9003214
+          ],
+          [
+            -77.0335663,
+            38.900322
+          ]
+        ]
+      },
+      "id": "way/518035652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/518035653",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "15th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0335121,
+            38.9001439
+          ],
+          [
+            -77.0335098,
+            38.9002515
+          ],
+          [
+            -77.0335087,
+            38.900296
+          ]
+        ]
+      },
+      "id": "way/518035653"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/518035657",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "H Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0320905,
+            38.9003306
+          ],
+          [
+            -77.0319562,
+            38.9003195
+          ],
+          [
+            -77.0318285,
+            38.9003089
+          ]
+        ]
+      },
+      "id": "way/518035657"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/518035659",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "14th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0321353,
+            38.9001316
+          ],
+          [
+            -77.0321357,
+            38.9002335
+          ],
+          [
+            -77.0321359,
+            38.9003027
+          ]
+        ]
+      },
+      "id": "way/518035659"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/518035661",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "H Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0318301,
+            38.9001287
+          ],
+          [
+            -77.0319559,
+            38.9001167
+          ],
+          [
+            -77.0320975,
+            38.9001031
+          ]
+        ]
+      },
+      "id": "way/518035661"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/545392402",
+        "crossing": "uncontrolled",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "12th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0282095,
+            38.9012626
+          ],
+          [
+            -77.0282098,
+            38.9013403
+          ],
+          [
+            -77.0282103,
+            38.9013981
+          ]
+        ]
+      },
+      "id": "way/545392402"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/641214829",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "smoothness": "good",
+        "street:name": "13th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297873,
+            38.8982588
+          ],
+          [
+            -77.0297833,
+            38.898226
+          ],
+          [
+            -77.0297805,
+            38.8974729
+          ],
+          [
+            -77.0297792,
+            38.8974412
+          ]
+        ]
+      },
+      "id": "way/641214829"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/746018110",
+        "crossing": "traffic_signals",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0295,
+            38.8999546
+          ],
+          [
+            -77.0296232,
+            38.899955
+          ],
+          [
+            -77.0297443,
+            38.8999554
+          ]
+        ]
+      },
+      "id": "way/746018110"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/900800186",
+        "crossing": "uncontrolled",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0281675,
+            38.899926
+          ],
+          [
+            -77.0281059,
+            38.8999255
+          ],
+          [
+            -77.0280032,
+            38.8999246
+          ]
+        ]
+      },
+      "id": "way/900800186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/901605549",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297937,
+            38.8999219
+          ],
+          [
+            -77.0297946,
+            38.8998738
+          ],
+          [
+            -77.0297961,
+            38.8997897
+          ],
+          [
+            -77.0297969,
+            38.8997454
+          ]
+        ]
+      },
+      "id": "way/901605549"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/901605550",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297939,
+            38.9000531
+          ],
+          [
+            -77.0297934,
+            38.9000163
+          ],
+          [
+            -77.0297937,
+            38.8999554
+          ],
+          [
+            -77.0297937,
+            38.8999219
+          ]
+        ]
+      },
+      "id": "way/901605550"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/901605551",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294538,
+            38.899744
+          ],
+          [
+            -77.0294555,
+            38.8998202
+          ],
+          [
+            -77.0294573,
+            38.8999082
+          ]
+        ]
+      },
+      "id": "way/901605551"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/901605552",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294573,
+            38.8999082
+          ],
+          [
+            -77.0294572,
+            38.8999201
+          ],
+          [
+            -77.0294568,
+            38.8999545
+          ],
+          [
+            -77.0294561,
+            38.9000418
+          ],
+          [
+            -77.0294486,
+            38.9001249
+          ],
+          [
+            -77.0294453,
+            38.900161
+          ]
+        ]
+      },
+      "id": "way/901605552"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/912548954",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0337567,
+            38.8986155
+          ],
+          [
+            -77.0337391,
+            38.8986215
+          ],
+          [
+            -77.0336246,
+            38.8986607
+          ],
+          [
+            -77.0335195,
+            38.8986967
+          ]
+        ]
+      },
+      "id": "way/912548954"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/912548955",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0335195,
+            38.8986967
+          ],
+          [
+            -77.033475,
+            38.8987125
+          ],
+          [
+            -77.0334587,
+            38.8987183
+          ],
+          [
+            -77.0321411,
+            38.8991874
+          ],
+          [
+            -77.032097,
+            38.8992031
+          ]
+        ]
+      },
+      "id": "way/912548955"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/912993587",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "smoothness": "excellent",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0337278,
+            38.8989355
+          ],
+          [
+            -77.0337645,
+            38.8989259
+          ],
+          [
+            -77.0337947,
+            38.898918
+          ],
+          [
+            -77.0338562,
+            38.8989179
+          ],
+          [
+            -77.0341293,
+            38.8989185
+          ],
+          [
+            -77.0350273,
+            38.8989204
+          ],
+          [
+            -77.0350242,
+            38.8995198
+          ],
+          [
+            -77.0350328,
+            38.8999125
+          ]
+        ]
+      },
+      "id": "way/912993587"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/912993624",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "foot": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "15th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0334772,
+            38.8984026
+          ],
+          [
+            -77.0334781,
+            38.8983222
+          ],
+          [
+            -77.0334789,
+            38.8982596
+          ]
+        ]
+      },
+      "id": "way/912993624"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102459370",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "G Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0280075,
+            38.8984358
+          ],
+          [
+            -77.0279753,
+            38.8984357
+          ],
+          [
+            -77.0279431,
+            38.8984221
+          ],
+          [
+            -77.0278947,
+            38.8984221
+          ],
+          [
+            -77.0273189,
+            38.8984217
+          ],
+          [
+            -77.0272305,
+            38.8984216
+          ],
+          [
+            -77.0271997,
+            38.8984216
+          ],
+          [
+            -77.027162,
+            38.8984216
+          ]
+        ]
+      },
+      "id": "way/1102459370"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102459371",
+        "crossing": "marked",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "G Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0281647,
+            38.8984278
+          ],
+          [
+            -77.0281095,
+            38.8984306
+          ],
+          [
+            -77.0280075,
+            38.8984358
+          ]
+        ]
+      },
+      "id": "way/1102459371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1102459376",
+        "crossing": "marked",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0281658,
+            38.899707
+          ],
+          [
+            -77.0281064,
+            38.8997061
+          ],
+          [
+            -77.0280052,
+            38.8997046
+          ]
+        ]
+      },
+      "id": "way/1102459376"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1131826054",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.029804,
+            38.8983951
+          ],
+          [
+            -77.0298077,
+            38.8984253
+          ],
+          [
+            -77.0297817,
+            38.8984558
+          ],
+          [
+            -77.0297848,
+            38.8990624
+          ],
+          [
+            -77.0297881,
+            38.8997036
+          ],
+          [
+            -77.0297961,
+            38.8997229
+          ],
+          [
+            -77.0297969,
+            38.8997454
+          ]
+        ]
+      },
+      "id": "way/1131826054"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1131826056",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.029804,
+            38.8983951
+          ],
+          [
+            -77.0297955,
+            38.8983258
+          ],
+          [
+            -77.0297873,
+            38.8982588
+          ]
+        ]
+      },
+      "id": "way/1131826056"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1131826057",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "G Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297464,
+            38.8984549
+          ],
+          [
+            -77.0296233,
+            38.8984517
+          ],
+          [
+            -77.0295003,
+            38.8984486
+          ]
+        ]
+      },
+      "id": "way/1131826057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1131826060",
+        "crossing": "uncontrolled",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "12th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0282251,
+            38.8982552
+          ],
+          [
+            -77.0282164,
+            38.8983227
+          ],
+          [
+            -77.0282073,
+            38.8983938
+          ]
+        ]
+      },
+      "id": "way/1131826060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1131826061",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "12th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0282251,
+            38.8982552
+          ],
+          [
+            -77.0282289,
+            38.898226
+          ],
+          [
+            -77.0281999,
+            38.8982034
+          ],
+          [
+            -77.0282053,
+            38.8974853
+          ],
+          [
+            -77.0282054,
+            38.8974734
+          ],
+          [
+            -77.0282051,
+            38.897441
+          ]
+        ]
+      },
+      "id": "way/1131826061"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1131826062",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0304179,
+            38.89984
+          ],
+          [
+            -77.0303812,
+            38.8997987
+          ],
+          [
+            -77.0302601,
+            38.8997551
+          ],
+          [
+            -77.0301857,
+            38.8997332
+          ],
+          [
+            -77.030123,
+            38.8997238
+          ]
+        ]
+      },
+      "id": "way/1131826062"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1131826063",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294529,
+            38.8997203
+          ],
+          [
+            -77.0287431,
+            38.8997221
+          ],
+          [
+            -77.0282069,
+            38.8997193
+          ]
+        ]
+      },
+      "id": "way/1131826063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1131826065",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "12th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0282073,
+            38.8983938
+          ],
+          [
+            -77.0282031,
+            38.8984259
+          ],
+          [
+            -77.028205,
+            38.8990548
+          ],
+          [
+            -77.0282069,
+            38.8997067
+          ],
+          [
+            -77.0282069,
+            38.8997193
+          ],
+          [
+            -77.028207,
+            38.8997456
+          ]
+        ]
+      },
+      "id": "way/1131826065"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1131826066",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "smoothness": "excellent",
+        "street:name": "14th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0321438,
+            38.8994257
+          ],
+          [
+            -77.0321379,
+            38.8994873
+          ],
+          [
+            -77.0321219,
+            38.8996698
+          ],
+          [
+            -77.032122,
+            38.9001011
+          ],
+          [
+            -77.0321349,
+            38.9001126
+          ],
+          [
+            -77.0321353,
+            38.9001316
+          ]
+        ]
+      },
+      "id": "way/1131826066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1131826067",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "smoothness": "intermediate",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.033512,
+            38.9001187
+          ],
+          [
+            -77.033,
+            38.9001199
+          ],
+          [
+            -77.0329001,
+            38.9001147
+          ],
+          [
+            -77.0321349,
+            38.9001126
+          ]
+        ]
+      },
+      "id": "way/1131826067"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1163461679",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "12th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0282182,
+            38.9005888
+          ],
+          [
+            -77.0282156,
+            38.9005391
+          ],
+          [
+            -77.0282056,
+            38.9003511
+          ],
+          [
+            -77.0282049,
+            38.8999264
+          ],
+          [
+            -77.0282041,
+            38.8998998
+          ]
+        ]
+      },
+      "id": "way/1163461679"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1233469427",
+        "highway": "footway",
+        "surface": "paved"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0335066,
+            38.8994365
+          ],
+          [
+            -77.0331443,
+            38.8994384
+          ],
+          [
+            -77.0329357,
+            38.8996879
+          ]
+        ]
+      },
+      "id": "way/1233469427"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236435836",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "I Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0320785,
+            38.901216
+          ],
+          [
+            -77.0321202,
+            38.9012159
+          ],
+          [
+            -77.0321447,
+            38.9012318
+          ],
+          [
+            -77.0334513,
+            38.901233
+          ],
+          [
+            -77.0335077,
+            38.9012261
+          ],
+          [
+            -77.0335713,
+            38.9012184
+          ]
+        ]
+      },
+      "id": "way/1236435836"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236435837",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "15th Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0335074,
+            38.9012652
+          ],
+          [
+            -77.0335077,
+            38.9012261
+          ],
+          [
+            -77.0335053,
+            38.900763
+          ],
+          [
+            -77.0335081,
+            38.9003225
+          ],
+          [
+            -77.0335087,
+            38.900296
+          ]
+        ]
+      },
+      "id": "way/1236435837"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236439229",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "I Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0295024,
+            38.9012383
+          ],
+          [
+            -77.0294711,
+            38.9012386
+          ],
+          [
+            -77.0282089,
+            38.9012364
+          ],
+          [
+            -77.0281681,
+            38.9012363
+          ]
+        ]
+      },
+      "id": "way/1236439229"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236439230",
+        "crossing": "uncontrolled",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "source": "Bing",
+        "street:name": "I Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297486,
+            38.9012105
+          ],
+          [
+            -77.0296243,
+            38.9012245
+          ],
+          [
+            -77.0295024,
+            38.9012383
+          ]
+        ]
+      },
+      "id": "way/1236439230"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236439231",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "source": "Bing",
+        "street:name": "13th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0298388,
+            38.9012658
+          ],
+          [
+            -77.0298391,
+            38.9012359
+          ]
+        ]
+      },
+      "id": "way/1236439231"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236439232",
+        "crossing": "uncontrolled",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "source": "Bing",
+        "street:name": "13th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297925,
+            38.9014197
+          ],
+          [
+            -77.0298174,
+            38.9013369
+          ],
+          [
+            -77.0298388,
+            38.9012658
+          ]
+        ]
+      },
+      "id": "way/1236439232"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236439661",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "New York Avenue Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.029487,
+            38.9001188
+          ],
+          [
+            -77.0294486,
+            38.9001249
+          ],
+          [
+            -77.029348,
+            38.9001406
+          ],
+          [
+            -77.0284721,
+            38.90044
+          ],
+          [
+            -77.0282156,
+            38.9005391
+          ],
+          [
+            -77.028168,
+            38.9005578
+          ]
+        ]
+      },
+      "id": "way/1236439661"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236439666",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "source": "Bing",
+        "street:name": "13th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294353,
+            38.9004019
+          ],
+          [
+            -77.0294478,
+            38.9004412
+          ],
+          [
+            -77.0294648,
+            38.9004948
+          ],
+          [
+            -77.0294675,
+            38.9011474
+          ],
+          [
+            -77.0294711,
+            38.9012386
+          ],
+          [
+            -77.0294728,
+            38.9012828
+          ]
+        ]
+      },
+      "id": "way/1236439666"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236439667",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "New York Avenue Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0281692,
+            38.9008643
+          ],
+          [
+            -77.0282107,
+            38.9008578
+          ],
+          [
+            -77.0282804,
+            38.9008468
+          ],
+          [
+            -77.0293585,
+            38.9004736
+          ],
+          [
+            -77.0294478,
+            38.9004412
+          ],
+          [
+            -77.0294821,
+            38.9004289
+          ]
+        ]
+      },
+      "id": "way/1236439667"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236440095",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297443,
+            38.8999554
+          ],
+          [
+            -77.0297937,
+            38.8999554
+          ],
+          [
+            -77.029899,
+            38.8999556
+          ],
+          [
+            -77.0299409,
+            38.8999621
+          ],
+          [
+            -77.0299864,
+            38.8999874
+          ]
+        ]
+      },
+      "id": "way/1236440095"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236440096",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294568,
+            38.8999545
+          ],
+          [
+            -77.0295,
+            38.8999546
+          ]
+        ]
+      },
+      "id": "way/1236440096"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236440100",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297881,
+            38.8997036
+          ],
+          [
+            -77.029751,
+            38.8997043
+          ]
+        ]
+      },
+      "id": "way/1236440100"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236440101",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.029503,
+            38.8997071
+          ],
+          [
+            -77.0294617,
+            38.8997073
+          ]
+        ]
+      },
+      "id": "way/1236440101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236441474",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "smoothness": "excellent",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0320975,
+            38.9001031
+          ],
+          [
+            -77.032122,
+            38.9001011
+          ]
+        ]
+      },
+      "id": "way/1236441474"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236441476",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "14th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0321359,
+            38.9003027
+          ],
+          [
+            -77.0321264,
+            38.9003198
+          ],
+          [
+            -77.0321167,
+            38.9003305
+          ],
+          [
+            -77.0321177,
+            38.9007695
+          ],
+          [
+            -77.0321202,
+            38.9011113
+          ],
+          [
+            -77.0321202,
+            38.9012159
+          ]
+        ]
+      },
+      "id": "way/1236441476"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236441477",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "H Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0321167,
+            38.9003305
+          ],
+          [
+            -77.0320905,
+            38.9003306
+          ]
+        ]
+      },
+      "id": "way/1236441477"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236441478",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0318285,
+            38.9003089
+          ],
+          [
+            -77.0317886,
+            38.9003084
+          ],
+          [
+            -77.0307889,
+            38.9003048
+          ],
+          [
+            -77.0306119,
+            38.9003038
+          ],
+          [
+            -77.0303872,
+            38.9001796
+          ],
+          [
+            -77.0303377,
+            38.900153
+          ]
+        ]
+      },
+      "id": "way/1236441478"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236442206",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.030266,
+            38.9001448
+          ],
+          [
+            -77.0302493,
+            38.9001337
+          ]
+        ]
+      },
+      "id": "way/1236442206"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236442207",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "New York Avenue Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0303589,
+            38.9001427
+          ],
+          [
+            -77.0303377,
+            38.900153
+          ],
+          [
+            -77.0303149,
+            38.9001467
+          ],
+          [
+            -77.030289,
+            38.9001441
+          ],
+          [
+            -77.030266,
+            38.9001448
+          ],
+          [
+            -77.0302364,
+            38.9001524
+          ],
+          [
+            -77.0301275,
+            38.9001926
+          ],
+          [
+            -77.029901,
+            38.9002775
+          ],
+          [
+            -77.0298079,
+            38.9003128
+          ],
+          [
+            -77.0297965,
+            38.9003326
+          ],
+          [
+            -77.0297502,
+            38.9003474
+          ]
+        ]
+      },
+      "id": "way/1236442207"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236442208",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0317774,
+            38.8996276
+          ],
+          [
+            -77.0317236,
+            38.8996463
+          ],
+          [
+            -77.0307054,
+            38.8999952
+          ],
+          [
+            -77.030577,
+            38.9000256
+          ],
+          [
+            -77.0305537,
+            38.9000401
+          ],
+          [
+            -77.0305359,
+            38.9000512
+          ]
+        ]
+      },
+      "id": "way/1236442208"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236442209",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.030577,
+            38.9000256
+          ],
+          [
+            -77.0305484,
+            38.8999891
+          ]
+        ]
+      },
+      "id": "way/1236442209"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236442211",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0306556,
+            38.8996834
+          ],
+          [
+            -77.0305848,
+            38.8997295
+          ],
+          [
+            -77.0303812,
+            38.8997987
+          ],
+          [
+            -77.0303001,
+            38.8998282
+          ]
+        ]
+      },
+      "id": "way/1236442211"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236442214",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0272028,
+            38.9011911
+          ],
+          [
+            -77.027273,
+            38.9011905
+          ],
+          [
+            -77.0279108,
+            38.9009677
+          ],
+          [
+            -77.0279718,
+            38.9009381
+          ],
+          [
+            -77.0280034,
+            38.9009238
+          ]
+        ]
+      },
+      "id": "way/1236442214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1236442219",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "New York Avenue Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0280027,
+            38.9006128
+          ],
+          [
+            -77.0279551,
+            38.9006287
+          ],
+          [
+            -77.0275587,
+            38.9007657
+          ],
+          [
+            -77.027512,
+            38.9007782
+          ],
+          [
+            -77.0274694,
+            38.9007839
+          ],
+          [
+            -77.027413,
+            38.9007865
+          ],
+          [
+            -77.0272086,
+            38.9007887
+          ],
+          [
+            -77.0271665,
+            38.9007899
+          ]
+        ]
+      },
+      "id": "way/1236442219"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1237399609",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "14th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0321444,
+            38.9012638
+          ],
+          [
+            -77.0321447,
+            38.9012318
+          ]
+        ]
+      },
+      "id": "way/1237399609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1237399614",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "14th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0317595,
+            38.9012307
+          ],
+          [
+            -77.0317599,
+            38.9012632
+          ]
+        ]
+      },
+      "id": "way/1237399614"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1237399821",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "14th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0317704,
+            38.8995583
+          ],
+          [
+            -77.0317749,
+            38.8996024
+          ],
+          [
+            -77.0317774,
+            38.8996276
+          ],
+          [
+            -77.0317894,
+            38.8997472
+          ],
+          [
+            -77.0317909,
+            38.9001288
+          ],
+          [
+            -77.0317909,
+            38.9001617
+          ]
+        ]
+      },
+      "id": "way/1237399821"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1237399824",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "smoothness": "good",
+        "street:name": "G Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0320749,
+            38.8984536
+          ],
+          [
+            -77.0321059,
+            38.8984537
+          ]
+        ]
+      },
+      "id": "way/1237399824"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1238685889",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "smoothness": "good",
+        "street:name": "G Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0281647,
+            38.8984278
+          ],
+          [
+            -77.0282031,
+            38.8984259
+          ],
+          [
+            -77.029431,
+            38.8984242
+          ]
+        ]
+      },
+      "id": "way/1238685889"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1246969271",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "12th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0282113,
+            38.900813
+          ],
+          [
+            -77.0282107,
+            38.9008578
+          ],
+          [
+            -77.0282089,
+            38.9012364
+          ],
+          [
+            -77.0282095,
+            38.9012626
+          ]
+        ]
+      },
+      "id": "way/1246969271"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1246970333",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0282069,
+            38.8997067
+          ],
+          [
+            -77.0281658,
+            38.899707
+          ]
+        ]
+      },
+      "id": "way/1246970333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1246970334",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0280052,
+            38.8997046
+          ],
+          [
+            -77.0279641,
+            38.8997047
+          ],
+          [
+            -77.0279395,
+            38.8997186
+          ],
+          [
+            -77.0276088,
+            38.8997162
+          ],
+          [
+            -77.027199,
+            38.8997179
+          ]
+        ]
+      },
+      "id": "way/1246970334"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1246970337",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294572,
+            38.8999201
+          ],
+          [
+            -77.0282049,
+            38.8999264
+          ],
+          [
+            -77.0281675,
+            38.899926
+          ]
+        ]
+      },
+      "id": "way/1246970337"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1246970338",
+        "crossing": "uncontrolled",
+        "crossing:markings": "yes",
+        "footway": "crossing",
+        "highway": "footway",
+        "street:name": "12th Street Northwest",
+        "surface": "asphalt"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.028207,
+            38.8997456
+          ],
+          [
+            -77.0282056,
+            38.8998213
+          ],
+          [
+            -77.0282041,
+            38.8998998
+          ]
+        ]
+      },
+      "id": "way/1246970338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1247067840",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0348895,
+            38.9003228
+          ],
+          [
+            -77.0348603,
+            38.9003226
+          ],
+          [
+            -77.0337491,
+            38.9003204
+          ],
+          [
+            -77.0337076,
+            38.9003208
+          ]
+        ]
+      },
+      "id": "way/1247067840"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1247067843",
+        "foot": "yes",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "15th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0334634,
+            38.8989746
+          ],
+          [
+            -77.0334774,
+            38.8990398
+          ],
+          [
+            -77.0335073,
+            38.8991785
+          ],
+          [
+            -77.0335066,
+            38.8994365
+          ],
+          [
+            -77.0335119,
+            38.9001076
+          ],
+          [
+            -77.033512,
+            38.9001187
+          ],
+          [
+            -77.0335121,
+            38.9001439
+          ]
+        ]
+      },
+      "id": "way/1247067843"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1247067844",
+        "foot": "yes",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0335499,
+            38.9001076
+          ],
+          [
+            -77.0335119,
+            38.9001076
+          ]
+        ]
+      },
+      "id": "way/1247067844"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1247067846",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0335663,
+            38.900322
+          ],
+          [
+            -77.0335081,
+            38.9003225
+          ],
+          [
+            -77.0321264,
+            38.9003198
+          ]
+        ]
+      },
+      "id": "way/1247067846"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1249646911",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "I Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0337078,
+            38.9012187
+          ],
+          [
+            -77.0337698,
+            38.9012262
+          ],
+          [
+            -77.033869,
+            38.901238
+          ],
+          [
+            -77.0343227,
+            38.9012393
+          ],
+          [
+            -77.0344728,
+            38.9012187
+          ],
+          [
+            -77.0345,
+            38.9012151
+          ]
+        ]
+      },
+      "id": "way/1249646911"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1250032660",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.03354,
+            38.8990217
+          ],
+          [
+            -77.0334774,
+            38.8990398
+          ],
+          [
+            -77.0333987,
+            38.8990626
+          ],
+          [
+            -77.0322329,
+            38.8994678
+          ],
+          [
+            -77.0321379,
+            38.8994873
+          ],
+          [
+            -77.0320803,
+            38.8994991
+          ]
+        ]
+      },
+      "id": "way/1250032660"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1252173687",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294304,
+            38.8982236
+          ],
+          [
+            -77.0294305,
+            38.8982569
+          ]
+        ]
+      },
+      "id": "way/1252173687"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1252173689",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "G Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0295003,
+            38.8984486
+          ],
+          [
+            -77.029462,
+            38.8984476
+          ]
+        ]
+      },
+      "id": "way/1252173689"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1252173690",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "G Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297817,
+            38.8984558
+          ],
+          [
+            -77.0297464,
+            38.8984549
+          ]
+        ]
+      },
+      "id": "way/1252173690"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1252173692",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0294309,
+            38.8983951
+          ],
+          [
+            -77.029431,
+            38.8984242
+          ],
+          [
+            -77.029462,
+            38.8984476
+          ],
+          [
+            -77.0294601,
+            38.8990594
+          ],
+          [
+            -77.0294617,
+            38.8997073
+          ],
+          [
+            -77.0294529,
+            38.8997203
+          ],
+          [
+            -77.0294538,
+            38.899744
+          ]
+        ]
+      },
+      "id": "way/1252173692"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1252174293",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "14th Street Northwest",
+        "surface": "paved"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0317655,
+            38.8982246
+          ],
+          [
+            -77.0317673,
+            38.8982568
+          ]
+        ]
+      },
+      "id": "way/1252174293"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1252174296",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "14th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0321362,
+            38.8982585
+          ],
+          [
+            -77.0321368,
+            38.8982231
+          ]
+        ]
+      },
+      "id": "way/1252174296"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1252174297",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "smoothness": "good",
+        "street:name": "14th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0321562,
+            38.8992331
+          ],
+          [
+            -77.0321411,
+            38.8991874
+          ],
+          [
+            -77.03211,
+            38.8990958
+          ],
+          [
+            -77.0321059,
+            38.8984537
+          ],
+          [
+            -77.0321349,
+            38.8984212
+          ],
+          [
+            -77.0321356,
+            38.8983946
+          ]
+        ]
+      },
+      "id": "way/1252174297"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1252174298",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "G Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.031791,
+            38.8984532
+          ],
+          [
+            -77.0318321,
+            38.8984533
+          ]
+        ]
+      },
+      "id": "way/1252174298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1252174299",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "14th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0317749,
+            38.8983918
+          ],
+          [
+            -77.0317765,
+            38.8984206
+          ],
+          [
+            -77.031791,
+            38.8984532
+          ],
+          [
+            -77.0317863,
+            38.899192
+          ],
+          [
+            -77.0317789,
+            38.8993235
+          ],
+          [
+            -77.0317751,
+            38.8993818
+          ]
+        ]
+      },
+      "id": "way/1252174299"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1252174548",
+        "foot": "yes",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "15th Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.033475,
+            38.8987125
+          ],
+          [
+            -77.0334772,
+            38.8984188
+          ],
+          [
+            -77.0334772,
+            38.8984026
+          ]
+        ]
+      },
+      "id": "way/1252174548"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1252174549",
+        "foot": "yes",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "lit": "yes",
+        "street:name": "15th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0334789,
+            38.8982596
+          ],
+          [
+            -77.0334788,
+            38.8982239
+          ]
+        ]
+      },
+      "id": "way/1252174549"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1353563997",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "13th Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0297907,
+            38.9012099
+          ],
+          [
+            -77.0297915,
+            38.9011535
+          ],
+          [
+            -77.0297945,
+            38.9004365
+          ],
+          [
+            -77.0297965,
+            38.9003326
+          ]
+        ]
+      },
+      "id": "way/1353563997"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1355272031",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0303812,
+            38.8997987
+          ],
+          [
+            -77.0303774,
+            38.8997229
+          ]
+        ]
+      },
+      "id": "way/1355272031"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1355272032",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0318257,
+            38.8993114
+          ],
+          [
+            -77.0317789,
+            38.8993235
+          ],
+          [
+            -77.0316974,
+            38.8993447
+          ],
+          [
+            -77.0312817,
+            38.899489
+          ],
+          [
+            -77.0310909,
+            38.8995349
+          ],
+          [
+            -77.0306556,
+            38.8996834
+          ],
+          [
+            -77.030582,
+            38.8996988
+          ],
+          [
+            -77.0305052,
+            38.8997115
+          ],
+          [
+            -77.0304204,
+            38.8997207
+          ],
+          [
+            -77.0303774,
+            38.8997229
+          ]
+        ]
+      },
+      "id": "way/1355272032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1355272033",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "New York Avenue Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0318211,
+            38.8995864
+          ],
+          [
+            -77.0317749,
+            38.8996024
+          ]
+        ]
+      },
+      "id": "way/1355272033"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1355580729",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "G Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0317765,
+            38.8984206
+          ],
+          [
+            -77.0298077,
+            38.8984253
+          ]
+        ]
+      },
+      "id": "way/1355580729"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1361058303",
+        "foot": "yes",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "15th Street Northwest",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0334603,
+            38.8987951
+          ],
+          [
+            -77.0334587,
+            38.8987183
+          ]
+        ]
+      },
+      "id": "way/1361058303"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1450146342",
+        "footway": "sidewalk",
+        "highway": "footway",
+        "street:name": "H Street Northwest",
+        "surface": "paving_stones"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.0303774,
+            38.8997229
+          ],
+          [
+            -77.0303413,
+            38.8997241
+          ],
+          [
+            -77.030123,
+            38.8997238
+          ],
+          [
+            -77.0297961,
+            38.8997229
+          ]
+        ]
+      },
+      "id": "way/1450146342"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/638753407",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.030247,
+          38.89985
+        ]
+      },
+      "id": "node/638753407"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790566114",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "highway": "crossing",
+        "tactile_paving": "incorrect",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.031771,
+          38.8983233
+        ]
+      },
+      "id": "node/2790566114"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790566119",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "highway": "crossing",
+        "tactile_paving": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0321361,
+          38.8983254
+        ]
+      },
+      "id": "node/2790566119"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790566125",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "highway": "crossing",
+        "tactile_paving": "no",
+        "traffic_signals:sound": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0319554,
+          38.8984534
+        ]
+      },
+      "id": "node/2790566125"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790566130",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0319464,
+          38.8992632
+        ]
+      },
+      "id": "node/2790566130"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790566135",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0321527,
+          38.8992881
+        ]
+      },
+      "id": "node/2790566135"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790566139",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.032147,
+          38.8993771
+        ]
+      },
+      "id": "node/2790566139"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790566145",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0317741,
+          38.8994206
+        ]
+      },
+      "id": "node/2790566145"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790566149",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0317718,
+          38.8995054
+        ]
+      },
+      "id": "node/2790566149"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623815",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:markings": "lines",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0281052,
+          38.9005785
+        ]
+      },
+      "id": "node/2790623815"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623823",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:markings": "lines",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "incorrect",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0282165,
+          38.9006335
+        ]
+      },
+      "id": "node/2790623823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623836",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:markings": "lines",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "incorrect",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0282126,
+          38.9007671
+        ]
+      },
+      "id": "node/2790623836"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623859",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:markings": "lines",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0281023,
+          38.9008883
+        ]
+      },
+      "id": "node/2790623859"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623885",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "highway": "crossing",
+        "tactile_paving": "incorrect",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0296243,
+          38.9012245
+        ]
+      },
+      "id": "node/2790623885"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623895",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0319504,
+          38.9012169
+        ]
+      },
+      "id": "node/2790623895"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623900",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0336401,
+          38.9012186
+        ]
+      },
+      "id": "node/2790623900"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623904",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0281028,
+          38.901236
+        ]
+      },
+      "id": "node/2790623904"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623915",
+        "button_operated": "no",
+        "check_date:crossing": "2023-04-17",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0282098,
+          38.9013403
+        ]
+      },
+      "id": "node/2790623915"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623926",
+        "button_operated": "no",
+        "check_date:crossing": "2023-04-20",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0294721,
+          38.9013414
+        ]
+      },
+      "id": "node/2790623926"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623930",
+        "button_operated": "no",
+        "check_date:crossing": "2023-04-10",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "tactile_paving": "incorrect",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0298174,
+          38.9013369
+        ]
+      },
+      "id": "node/2790623930"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623936",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0317749,
+          38.9013391
+        ]
+      },
+      "id": "node/2790623936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623945",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0321438,
+          38.9013354
+        ]
+      },
+      "id": "node/2790623945"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2790623949",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0335074,
+          38.9013366
+        ]
+      },
+      "id": "node/2790623949"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3001411134",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0294431,
+          38.9002141
+        ]
+      },
+      "id": "node/3001411134"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3013407812",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0319523,
+          38.8995422
+        ]
+      },
+      "id": "node/3013407812"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616049",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "crossing:markings": "yes",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0294555,
+          38.8998202
+        ]
+      },
+      "id": "node/3027616049"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616066",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0305011,
+          38.9000692
+        ]
+      },
+      "id": "node/3027616066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616070",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "crossing:markings": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0296279,
+          38.8997057
+        ]
+      },
+      "id": "node/3027616070"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616074",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:markings": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0297961,
+          38.8997897
+        ]
+      },
+      "id": "node/3027616074"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616096",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0296196,
+          38.9000752
+        ]
+      },
+      "id": "node/3027616096"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616097",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0297945,
+          38.9001144
+        ]
+      },
+      "id": "node/3027616097"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616114",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0300684,
+          38.8999147
+        ]
+      },
+      "id": "node/3027616114"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616116",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.029624,
+          38.9003858
+        ]
+      },
+      "id": "node/3027616116"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616120",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0294307,
+          38.8983189
+        ]
+      },
+      "id": "node/3027616120"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616123",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0301632,
+          38.9000837
+        ]
+      },
+      "id": "node/3027616123"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616333",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0300521,
+          38.900024
+        ]
+      },
+      "id": "node/3027616333"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616335",
+        "button_operated": "yes",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "traffic_signals:sound": "no",
+        "traffic_signals:vibration": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0336246,
+          38.8986607
+        ]
+      },
+      "id": "node/3027616335"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616338",
+        "check_date:crossing": "2023-10-29",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0297955,
+          38.9002182
+        ]
+      },
+      "id": "node/3027616338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616339",
+        "crossing": "traffic_signals",
+        "crossing:markings": "yes",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0297946,
+          38.8998738
+        ]
+      },
+      "id": "node/3027616339"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027616341",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0304043,
+          38.9001197
+        ]
+      },
+      "id": "node/3027616341"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3027832450",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "traffic_signals:sound": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0319562,
+          38.9003195
+        ]
+      },
+      "id": "node/3027832450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3028067369",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "traffic_signals:sound": "no",
+        "traffic_signals:vibration": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0334781,
+          38.8983222
+        ]
+      },
+      "id": "node/3028067369"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3028067374",
+        "button_operated": "no",
+        "crossing": "marked",
+        "crossing:island": "no",
+        "crossing:markings": "ladder",
+        "highway": "crossing",
+        "tactile_paving": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0336385,
+          38.8989765
+        ]
+      },
+      "id": "node/3028067374"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3028067377",
+        "crossing": "marked",
+        "crossing:markings": "ladder",
+        "highway": "crossing",
+        "tactile_paving": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0334624,
+          38.8989151
+        ]
+      },
+      "id": "node/3028067377"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3028067379",
+        "crossing": "marked",
+        "crossing:markings": "ladder",
+        "highway": "crossing",
+        "tactile_paving": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.033461,
+          38.8988325
+        ]
+      },
+      "id": "node/3028067379"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3028113004",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "highway": "crossing",
+        "tactile_paving": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0336371,
+          38.9003214
+        ]
+      },
+      "id": "node/3028113004"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3103253910",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "traffic_signals:sound": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0319559,
+          38.9001167
+        ]
+      },
+      "id": "node/3103253910"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3103253911",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "traffic_signals:sound": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0321357,
+          38.9002335
+        ]
+      },
+      "id": "node/3103253911"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3103253912",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "traffic_signals:sound": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0317896,
+          38.9002204
+        ]
+      },
+      "id": "node/3103253912"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3409715334",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "traffic_signals:sound": "no",
+        "traffic_signals:vibration": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0282164,
+          38.8983227
+        ]
+      },
+      "id": "node/3409715334"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3409715338",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "tactile_paving": "yes",
+        "traffic_signals:sound": "no",
+        "traffic_signals:vibration": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0281095,
+          38.8984306
+        ]
+      },
+      "id": "node/3409715338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3664660191",
+        "crossing": "traffic_signals",
+        "highway": "crossing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0294377,
+          38.9003434
+        ]
+      },
+      "id": "node/3664660191"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3752520795",
+        "crossing": "traffic_signals",
+        "highway": "crossing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0304486,
+          38.8998751
+        ]
+      },
+      "id": "node/3752520795"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3752520796",
+        "crossing": "traffic_signals",
+        "highway": "crossing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0305196,
+          38.8999562
+        ]
+      },
+      "id": "node/3752520796"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5054195962",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "crossing:markings": "ladder",
+        "highway": "crossing",
+        "tactile_paving": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0336405,
+          38.9001064
+        ]
+      },
+      "id": "node/5054195962"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5054195966",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:markings": "ladder",
+        "highway": "crossing",
+        "tactile_paving": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0335098,
+          38.9002515
+        ]
+      },
+      "id": "node/5054195966"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6981717277",
+        "crossing": "uncontrolled",
+        "crossing:markings": "yes",
+        "highway": "crossing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0296232,
+          38.899955
+        ]
+      },
+      "id": "node/6981717277"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8367767079",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "tactile_paving": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0281059,
+          38.8999255
+        ]
+      },
+      "id": "node/8367767079"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8367767080",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "highway": "crossing",
+        "tactile_paving": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0282056,
+          38.8998213
+        ]
+      },
+      "id": "node/8367767080"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8367767084",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "highway": "crossing",
+        "tactile_paving": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0281064,
+          38.8997061
+        ]
+      },
+      "id": "node/8367767084"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8481317269",
+        "highway": "crossing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0335053,
+          38.900763
+        ]
+      },
+      "id": "node/8481317269"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10553265851",
+        "crossing": "unmarked",
+        "crossing:markings": "no",
+        "highway": "crossing",
+        "tactile_paving": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0297848,
+          38.8990624
+        ]
+      },
+      "id": "node/10553265851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10553265852",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "highway": "crossing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0297955,
+          38.8983258
+        ]
+      },
+      "id": "node/10553265852"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10553265854",
+        "button_operated": "no",
+        "crossing": "traffic_signals",
+        "crossing:island": "no",
+        "crossing:markings": "ladder",
+        "crossing:signals": "yes",
+        "highway": "crossing",
+        "tactile_paving": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0296233,
+          38.8984517
+        ]
+      },
+      "id": "node/10553265854"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10553265866",
+        "highway": "crossing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.0321177,
+          38.9007695
+        ]
+      },
+      "id": "node/10553265866"
+    }
+  ]
+}

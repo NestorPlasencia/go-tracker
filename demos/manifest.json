@@ -1,0 +1,15 @@
+{
+  "defaultDemo": "idb-area",
+  "demos": [
+    {
+      "id": "washington-dc",
+      "name": "Washington, D.C.",
+      "data": "demos/washington-dc/data.json"
+    },
+    {
+      "id": "idb-area",
+      "name": "IDB Area",
+      "data": "demos/idb-area/data.json"
+    }
+  ]
+}

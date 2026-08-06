@@ -7,15 +7,15 @@
     <title>Mapa del evento</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><circle cx=%2232%22 cy=%2232%22 r=%2230%22 fill=%22%2317231d%22/><circle cx=%2232%22 cy=%2232%22 r=%2211%22 fill=%22%23d4b878%22/></svg>" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=2026-08-06-node-navigation" />
   </head>
   <body>
     <header class="topbar home-topbar">
       <div>
-        <p class="eyebrow">Navegación del evento</p>
+        <p id="event-eyebrow" class="eyebrow">Cargando evento…</p>
         <h1>Encuentra tu destino</h1>
       </div>
-      <span class="home-topbar__place">Washington, D.C.</span>
+      <span id="event-place" class="home-topbar__place"></span>
     </header>
 
     <main class="home-main">
@@ -33,7 +33,7 @@
       </section>
 
       <footer class="home-footer">
-        <span>4 destinos</span>
+        <span id="destination-count">Cargando destinos…</span>
         <span>Rutas peatonales</span>
         <span>GPS en tiempo real</span>
       </footer>
@@ -103,6 +103,7 @@
     </section>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="app.js"></script>
+    <p id="app-loading-message" class="sr-only" role="status" aria-live="polite">Cargando demo…</p>
+    <script src="demo-loader.js?v=2026-08-06-node-navigation"></script>
   </body>
 </html>

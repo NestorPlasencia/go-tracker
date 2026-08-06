@@ -20,7 +20,7 @@
       ]
     },
     {
-      "source": "/map.webp",
+      "source": "/demos/(.*)/map.webp",
       "headers": [
         {
           "key": "Cache-Control",
@@ -29,7 +29,7 @@
       ]
     },
     {
-      "source": "/walkways-osm.geojson",
+      "source": "/demos/(.*)/walkways-osm.json",
       "headers": [
         {
           "key": "Cache-Control",
