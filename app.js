@@ -443,6 +443,7 @@ let lastFocusedRouteButton;
 let activeDestinationNode;
 let locationWatchId;
 let lastRouteOrigin;
+let hasAdjustedInitialLocation = false;
 
 const userLocationIcon = L.divIcon({
   className: "user-location-marker",
@@ -498,13 +499,17 @@ function showUserLocation(position) {
   );
   externalMapActions.classList.toggle("is-recommended", !isInsideEvent);
 
-  if (isInsideEvent) {
-    map.setView(coordinates, Math.max(map.getZoom(), 18), { animate: true });
-  } else {
-    map.fitBounds(L.latLngBounds([coordinates, MAP_BOUNDS.getCenter()]), {
-      padding: [50, 50],
-      maxZoom: 15,
-    });
+  if (!hasAdjustedInitialLocation) {
+    hasAdjustedInitialLocation = true;
+
+    if (isInsideEvent) {
+      map.setView(coordinates, Math.max(map.getZoom(), 18), { animate: true });
+    } else {
+      map.fitBounds(L.latLngBounds([coordinates, MAP_BOUNDS.getCenter()]), {
+        padding: [50, 50],
+        maxZoom: 15,
+      });
+    }
   }
 
   if (pendingRouteNode) {
