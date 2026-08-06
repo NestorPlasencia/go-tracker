@@ -1,0 +1,44 @@
+{
+  "title": "Mapa del evento",
+  "eyebrow": "Navegación del evento",
+  "place": "Hoteles Guatemala",
+  "mapAlt": "Mapa del área del evento basado en OpenStreetMap",
+  "locale": "es",
+  "bounds": {
+    "southWest": [14.596541, -90.517709],
+    "northEast": [14.600253, -90.513740]
+  },
+  "mapOptions": {
+    "minZoom": 15,
+    "maxZoom": 20,
+    "maxBoundsPadding": 0.15,
+    "locationZoom": 18,
+    "routeMaxZoom": 18
+  },
+  "assets": {
+    "map": "map.webp",
+    "walkways": "walkways-osm.json"
+  },
+  "nodes": [
+    {
+      "id": "holidayInn",
+      "name": "Holiday Inn Guatemala",
+      "coordinates": [14.59928972200788, -90.51575216015651]
+    },
+    {
+      "id": "westinCaminoReal",
+      "name": "Westin Camino Real",
+      "coordinates": [14.59806687105292, -90.5162463605706]
+    },
+    {
+      "id": "baltimoreHotel",
+      "name": "Baltimore Hotel",
+      "coordinates": [14.597096103147463, -90.51623584418695]
+    },
+    {
+      "id": "intercontinentalRealGuatemala",
+      "name": "Intercontinental Real Guatemala",
+      "coordinates": [14.598118045822426, -90.5144750452581]
+    }
+  ]
+}

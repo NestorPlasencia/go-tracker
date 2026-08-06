@@ -1,5 +1,5 @@
 {
-  "defaultDemo": "idb-area",
+  "defaultDemo": "guatemala",
   "demos": [
     {
       "id": "washington-dc",
@@ -10,6 +10,11 @@
       "id": "idb-area",
       "name": "IDB Area",
       "data": "demos/idb-area/data.json"
+    },
+    {
+      "id": "guatemala",
+      "name": "Guatemala",
+      "data": "demos/guatemala/data.json"
     }
   ]
 }

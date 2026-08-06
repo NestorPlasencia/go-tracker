@@ -32,6 +32,13 @@ parámetro `demo`, por ejemplo:
 https://tu-dominio.vercel.app/?demo=washington-dc
 ```
 
+Para probar rutas sin depender del GPS, agrega `testLocation=1`. La ubicación
+simulada será el centro de los límites configurados para el demo:
+
+```text
+http://127.0.0.1:8080/?demo=washington-dc&testLocation=1
+```
+
 Cada demo mantiene sus datos y recursos dentro de su propia carpeta:
 
 ```text

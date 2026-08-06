@@ -1,0 +1,143 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-08-06T15:45:51Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/380916944",
+        "alt_name": "Calle Camino Real",
+        "highway": "tertiary",
+        "lanes": "2",
+        "name": "14 Calle",
+        "oneway": "yes",
+        "sidewalk": "both",
+        "surface": "concrete"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -90.5148639,
+            14.5981009
+          ],
+          [
+            -90.5144263,
+            14.5980267
+          ],
+          [
+            -90.514305,
+            14.5980097
+          ],
+          [
+            -90.5139467,
+            14.5979512
+          ],
+          [
+            -90.513013,
+            14.597799
+          ],
+          [
+            -90.5126437,
+            14.5977298
+          ],
+          [
+            -90.5125514,
+            14.5977125
+          ],
+          [
+            -90.5124427,
+            14.597695
+          ],
+          [
+            -90.5123732,
+            14.5976861
+          ],
+          [
+            -90.5121305,
+            14.5976549
+          ],
+          [
+            -90.5116361,
+            14.5975742
+          ],
+          [
+            -90.5112341,
+            14.5975086
+          ]
+        ]
+      },
+      "id": "way/380916944"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5257559703",
+        "bicycle": "yes",
+        "crossing": "traffic_signals",
+        "highway": "crossing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.5168051,
+          14.5997761
+        ]
+      },
+      "id": "node/5257559703"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8203450563",
+        "bicycle": "yes",
+        "crossing": "traffic_signals;zebra",
+        "highway": "crossing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.5169331,
+          14.5983141
+        ]
+      },
+      "id": "node/8203450563"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8203450564",
+        "bicycle": "yes",
+        "crossing": "traffic_signals;zebra",
+        "highway": "crossing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.5168965,
+          14.5985016
+        ]
+      },
+      "id": "node/8203450564"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8203450588",
+        "bicycle": "yes",
+        "crossing": "traffic_signals;zebra",
+        "highway": "crossing"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.5172907,
+          14.5971328
+        ]
+      },
+      "id": "node/8203450588"
+    }
+  ]
+}

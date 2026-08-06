@@ -5,6 +5,8 @@ const MAP_BOUNDS = L.latLngBounds(
 );
 const EVENT_NODES = DEMO_CONFIG.nodes;
 const MAP_OPTIONS = DEMO_CONFIG.mapOptions || {};
+const IS_TEST_LOCATION =
+  new URLSearchParams(window.location.search).get("testLocation") === "1";
 
 document.title = DEMO_CONFIG.title;
 document.querySelector("#event-eyebrow").textContent = DEMO_CONFIG.eyebrow;
@@ -471,7 +473,7 @@ function setLocationLoading(isLoading) {
 }
 
 function showUserLocation(position) {
-  const { latitude, longitude, accuracy } = position.coords;
+  const { latitude, longitude, accuracy, isSimulated } = position.coords;
   const coordinates = L.latLng(latitude, longitude);
   userCoordinates = coordinates;
   setLocationLoading(false);
@@ -498,9 +500,15 @@ function showUserLocation(position) {
 
   updateLocationStatus(
     isInsideEvent ? "success" : "error",
-    isInsideEvent ? "Seguimiento GPS activo" : "Estás fuera del área del evento",
     isInsideEvent
-      ? `Precisión aproximada: ${accuracyLabel} m.`
+      ? isSimulated
+        ? "Ubicación simulada"
+        : "Seguimiento GPS activo"
+      : "Estás fuera del área del evento",
+    isInsideEvent
+      ? isSimulated
+        ? "Usando el centro del mapa para realizar pruebas."
+        : `Precisión aproximada: ${accuracyLabel} m.`
       : `Usa Google Maps o Apple Maps para llegar. Precisión: ${accuracyLabel} m.`,
   );
   externalMapActions.classList.toggle("is-recommended", !isInsideEvent);
@@ -571,6 +579,20 @@ function handleLocationError(error) {
 
 function requestUserLocation(options = {}) {
   const showLoader = options.showLoader ?? true;
+
+  if (IS_TEST_LOCATION) {
+    const center = MAP_BOUNDS.getCenter();
+    setLocationLoading(false);
+    showUserLocation({
+      coords: {
+        latitude: center.lat,
+        longitude: center.lng,
+        accuracy: 1,
+        isSimulated: true,
+      },
+    });
+    return;
+  }
 
   if (!navigator.geolocation) {
     setLocationLoading(false);
