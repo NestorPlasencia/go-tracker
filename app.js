@@ -190,8 +190,89 @@ function isWalkableLine(feature) {
   );
 }
 
-function buildWalkingGraph(data) {
+function projectCoordinateToSegment(coordinate, start, end) {
+  const referenceLatitude = (start[1] + end[1]) / 2;
+  const metersPerLongitude = 111320 * Math.cos((referenceLatitude * Math.PI) / 180);
+  const metersPerLatitude = 110540;
+  const segmentX = (end[0] - start[0]) * metersPerLongitude;
+  const segmentY = (end[1] - start[1]) * metersPerLatitude;
+  const pointX = (coordinate[0] - start[0]) * metersPerLongitude;
+  const pointY = (coordinate[1] - start[1]) * metersPerLatitude;
+  const segmentLengthSquared = segmentX ** 2 + segmentY ** 2;
+
+  if (segmentLengthSquared === 0) {
+    return { t: 0, distance: Infinity };
+  }
+
+  const t = (pointX * segmentX + pointY * segmentY) / segmentLengthSquared;
+  const closestX = segmentX * t;
+  const closestY = segmentY * t;
+  const distance = Math.hypot(pointX - closestX, pointY - closestY);
+  return { t, distance };
+}
+
+function buildWalkingGraph(data, snapToleranceMeters = 0.75) {
   const nodes = new Map();
+  const walkableFeatures = data.features.filter(isWalkableLine);
+  const snapCandidates = new Map();
+
+  walkableFeatures.forEach((feature) => {
+    feature.geometry.coordinates.forEach((coordinate) => {
+      const key = `${coordinate[0].toFixed(7)},${coordinate[1].toFixed(7)}`;
+      if (!snapCandidates.has(key)) {
+        snapCandidates.set(key, coordinate);
+      }
+    });
+  });
+
+  const candidateCoordinates = [...snapCandidates.values()];
+  const referenceLatitude = candidateCoordinates.length
+    ? candidateCoordinates.reduce((sum, coordinate) => sum + coordinate[1], 0) /
+      candidateCoordinates.length
+    : 0;
+  const longitudeScale = 111320 * Math.cos((referenceLatitude * Math.PI) / 180);
+  const latitudeScale = 110540;
+  const gridCellSize = Math.max(4, snapToleranceMeters * 2);
+  const snapGrid = new Map();
+
+  candidateCoordinates.forEach((coordinate) => {
+    const x = coordinate[0] * longitudeScale;
+    const y = coordinate[1] * latitudeScale;
+    const gridX = Math.floor(x / gridCellSize);
+    const gridY = Math.floor(y / gridCellSize);
+    const gridKey = `${gridX},${gridY}`;
+    if (!snapGrid.has(gridKey)) snapGrid.set(gridKey, []);
+    snapGrid.get(gridKey).push(coordinate);
+  });
+
+  function getNearbySnapCandidates(start, end) {
+    const startX = start[0] * longitudeScale;
+    const startY = start[1] * latitudeScale;
+    const endX = end[0] * longitudeScale;
+    const endY = end[1] * latitudeScale;
+    const minGridX = Math.floor(
+      (Math.min(startX, endX) - snapToleranceMeters) / gridCellSize,
+    );
+    const maxGridX = Math.floor(
+      (Math.max(startX, endX) + snapToleranceMeters) / gridCellSize,
+    );
+    const minGridY = Math.floor(
+      (Math.min(startY, endY) - snapToleranceMeters) / gridCellSize,
+    );
+    const maxGridY = Math.floor(
+      (Math.max(startY, endY) + snapToleranceMeters) / gridCellSize,
+    );
+    const nearby = [];
+
+    for (let gridX = minGridX; gridX <= maxGridX; gridX += 1) {
+      for (let gridY = minGridY; gridY <= maxGridY; gridY += 1) {
+        const bucket = snapGrid.get(`${gridX},${gridY}`);
+        if (bucket) nearby.push(...bucket);
+      }
+    }
+
+    return nearby;
+  }
 
   function getNode(coordinate) {
     const [longitude, latitude] = coordinate;
@@ -209,18 +290,45 @@ function buildWalkingGraph(data) {
     return nodes.get(key);
   }
 
-  data.features.filter(isWalkableLine).forEach((feature) => {
+  walkableFeatures.forEach((feature) => {
     const coordinates = feature.geometry.coordinates;
 
     for (let index = 1; index < coordinates.length; index += 1) {
-      const start = getNode(coordinates[index - 1]);
-      const end = getNode(coordinates[index]);
-      const distance = start.latlng.distanceTo(end.latlng);
+      const startCoordinate = coordinates[index - 1];
+      const endCoordinate = coordinates[index];
+      const splitCoordinates = [
+        { coordinate: startCoordinate, t: 0 },
+        { coordinate: endCoordinate, t: 1 },
+      ];
 
-      if (distance <= 0) continue;
-      if (!start.edges.has(end.key) || start.edges.get(end.key) > distance) {
-        start.edges.set(end.key, distance);
-        end.edges.set(start.key, distance);
+      getNearbySnapCandidates(startCoordinate, endCoordinate).forEach((candidate) => {
+        const projection = projectCoordinateToSegment(
+          candidate,
+          startCoordinate,
+          endCoordinate,
+        );
+
+        if (
+          projection.t > 0.000001 &&
+          projection.t < 0.999999 &&
+          projection.distance <= snapToleranceMeters
+        ) {
+          splitCoordinates.push({ coordinate: candidate, t: projection.t });
+        }
+      });
+
+      splitCoordinates.sort((first, second) => first.t - second.t);
+
+      for (let splitIndex = 1; splitIndex < splitCoordinates.length; splitIndex += 1) {
+        const start = getNode(splitCoordinates[splitIndex - 1].coordinate);
+        const end = getNode(splitCoordinates[splitIndex].coordinate);
+        const distance = start.latlng.distanceTo(end.latlng);
+
+        if (distance <= 0) continue;
+        if (!start.edges.has(end.key) || start.edges.get(end.key) > distance) {
+          start.edges.set(end.key, distance);
+          end.edges.set(start.key, distance);
+        }
       }
     }
   });
@@ -334,7 +442,10 @@ fetch(DEMO_CONFIG.assets.walkways)
     return response.json();
   })
   .then((data) => {
-    walkingGraph = buildWalkingGraph(data);
+    walkingGraph = buildWalkingGraph(
+      data,
+      DEMO_CONFIG.routing?.snapToleranceMeters ?? 0.75,
+    );
 
     L.geoJSON(data, {
       pane: "walkways",
@@ -452,6 +563,8 @@ let activeDestinationNode;
 let locationWatchId;
 let lastRouteOrigin;
 let hasAdjustedInitialLocation = false;
+let simulatedLocationFrame;
+let pendingSimulatedCoordinates;
 
 const userLocationIcon = L.divIcon({
   className: "user-location-marker",
@@ -472,6 +585,38 @@ function setLocationLoading(isLoading) {
   locationLoading.classList.toggle("is-visible", isLoading);
 }
 
+function simulatedPosition(latlng) {
+  return {
+    coords: {
+      latitude: latlng.lat,
+      longitude: latlng.lng,
+      accuracy: 1,
+      isSimulated: true,
+    },
+  };
+}
+
+function updateDraggedSimulatedLocation(latlng, forceRoute = false) {
+  pendingSimulatedCoordinates = latlng;
+
+  if (forceRoute) {
+    if (simulatedLocationFrame) cancelAnimationFrame(simulatedLocationFrame);
+    simulatedLocationFrame = undefined;
+    pendingSimulatedCoordinates = undefined;
+    lastRouteOrigin = undefined;
+    showUserLocation(simulatedPosition(latlng));
+    return;
+  }
+
+  if (simulatedLocationFrame) return;
+  simulatedLocationFrame = requestAnimationFrame(() => {
+    const nextCoordinates = pendingSimulatedCoordinates;
+    simulatedLocationFrame = undefined;
+    pendingSimulatedCoordinates = undefined;
+    showUserLocation(simulatedPosition(nextCoordinates));
+  });
+}
+
 function showUserLocation(position) {
   const { latitude, longitude, accuracy, isSimulated } = position.coords;
   const coordinates = L.latLng(latitude, longitude);
@@ -485,12 +630,27 @@ function showUserLocation(position) {
   if (!userLocationMarker) {
     userLocationMarker = L.marker(coordinates, {
       icon: userLocationIcon,
-      title: "Tu ubicación",
-      alt: "Tu ubicación actual",
+      title: IS_TEST_LOCATION ? "Ubicación simulada movible" : "Tu ubicación",
+      alt: IS_TEST_LOCATION ? "Ubicación simulada movible" : "Tu ubicación actual",
       zIndexOffset: 1000,
+      draggable: IS_TEST_LOCATION,
+      autoPan: IS_TEST_LOCATION,
     })
-      .bindPopup("<strong>Tu ubicación actual</strong>")
+      .bindPopup(
+        IS_TEST_LOCATION
+          ? "<strong>Ubicación simulada</strong><br><small>Arrastra este punto para probar otra ruta.</small>"
+          : "<strong>Tu ubicación actual</strong>",
+      )
       .addTo(map);
+
+    if (IS_TEST_LOCATION) {
+      userLocationMarker.on("drag", (event) => {
+        updateDraggedSimulatedLocation(event.target.getLatLng());
+      });
+      userLocationMarker.on("dragend", (event) => {
+        updateDraggedSimulatedLocation(event.target.getLatLng(), true);
+      });
+    }
   } else {
     userLocationMarker.setLatLng(coordinates);
   }
@@ -507,7 +667,7 @@ function showUserLocation(position) {
       : "Estás fuera del área del evento",
     isInsideEvent
       ? isSimulated
-        ? "Usando el centro del mapa para realizar pruebas."
+        ? "Arrastra el punto azul para probar rutas desde otra ubicación."
         : `Precisión aproximada: ${accuracyLabel} m.`
       : `Usa Google Maps o Apple Maps para llegar. Precisión: ${accuracyLabel} m.`,
   );

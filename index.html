@@ -7,7 +7,7 @@
     <title>Mapa del evento</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><circle cx=%2232%22 cy=%2232%22 r=%2230%22 fill=%22%2317231d%22/><circle cx=%2232%22 cy=%2232%22 r=%2211%22 fill=%22%23d4b878%22/></svg>" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css?v=2026-08-06-node-navigation" />
+    <link rel="stylesheet" href="styles.css?v=2026-08-06-encoding-fix" />
   </head>
   <body>
     <header class="topbar home-topbar">
@@ -15,7 +15,15 @@
         <p id="event-eyebrow" class="eyebrow">Cargando evento…</p>
         <h1>Encuentra tu destino</h1>
       </div>
-      <span id="event-place" class="home-topbar__place"></span>
+      <div class="home-topbar__meta">
+        <span id="event-place" class="home-topbar__place"></span>
+        <label class="demo-index" for="demo-selector">
+          <span>Demos</span>
+          <select id="demo-selector" aria-label="Seleccionar otro demo" disabled>
+            <option>Cargando…</option>
+          </select>
+        </label>
+      </div>
     </header>
 
     <main class="home-main">
@@ -104,6 +112,6 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <p id="app-loading-message" class="sr-only" role="status" aria-live="polite">Cargando demo…</p>
-    <script src="demo-loader.js?v=2026-08-06-node-navigation"></script>
+    <script src="demo-loader.js?v=2026-08-06-demo-index"></script>
   </body>
 </html>

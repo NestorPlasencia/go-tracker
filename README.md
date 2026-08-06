@@ -32,6 +32,9 @@ parámetro `demo`, por ejemplo:
 https://tu-dominio.vercel.app/?demo=washington-dc
 ```
 
+El encabezado del home también incluye un selector pequeño que se alimenta de
+`demos/manifest.json` para cambiar entre todos los demos registrados.
+
 Para probar rutas sin depender del GPS, agrega `testLocation=1`. La ubicación
 simulada será el centro de los límites configurados para el demo:
 
@@ -58,5 +61,20 @@ demos/
 Para crear otro demo, copia la carpeta `washington-dc`, reemplaza sus tres
 archivos y registra el nuevo `id` y la ruta a su `data.json` en el manifiesto.
 No es necesario duplicar ni modificar `index.html` o `app.js`.
+
+## Editor de red peatonal
+
+Los archivos de edición están aislados dentro de `editor/` y no son cargados
+por la aplicación de navegación. Para abrir la herramienta local:
+
+```text
+http://127.0.0.1:8080/editor/?demo=washington-dc
+```
+
+El editor permite dibujar, conectar, editar, subdividir y eliminar líneas. La
+subdivisión usa 10 nodos movibles por defecto y siempre conserva las esquinas
+originales; si una línea ya tiene más vértices, no los elimina. El botón
+**Descargar GeoJSON** genera un nuevo `walkways-osm.json`; reemplaza manualmente
+el archivo correspondiente dentro de la carpeta del demo después de revisarlo.
 
 Los datos y el mapa derivados de OpenStreetMap deben conservar la atribución visible a OpenStreetMap contributors.

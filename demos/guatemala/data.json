@@ -1,4 +1,5 @@
 {
+  "version": "2026-08-06-draggable-test-location",
   "title": "Mapa del evento",
   "eyebrow": "Navegación del evento",
   "place": "Hoteles Guatemala",
@@ -14,6 +15,9 @@
     "maxBoundsPadding": 0.15,
     "locationZoom": 18,
     "routeMaxZoom": 18
+  },
+  "routing": {
+    "snapToleranceMeters": 1
   },
   "assets": {
     "map": "map.webp",

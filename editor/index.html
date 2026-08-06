@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17231d" />
+    <title>Editor de red peatonal</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css"
+    />
+    <link rel="stylesheet" href="editor.css?v=2026-08-06-resubdivide" />
+  </head>
+  <body>
+    <header class="editor-header">
+      <div>
+        <p>Herramienta independiente</p>
+        <h1>Editor de red peatonal</h1>
+      </div>
+      <a id="open-demo-link" href="../" target="_blank" rel="noopener noreferrer">
+        Abrir demo
+      </a>
+    </header>
+
+    <main class="editor-layout">
+      <aside class="editor-panel" aria-label="Herramientas de edición">
+        <label>
+          Demo
+          <select id="demo-select"></select>
+        </label>
+
+        <label>
+          Tipo de línea nueva
+          <select id="walkway-type">
+            <option value="sidewalk">Acera</option>
+            <option value="crossing">Cruce peatonal</option>
+            <option value="footway">Camino peatonal</option>
+            <option value="steps">Escaleras</option>
+          </select>
+        </label>
+
+        <label>
+          Nodos por línea
+          <input id="subdivision-count" type="number" min="2" max="100" value="10" inputmode="numeric" />
+          <small>Las esquinas originales siempre se conservan.</small>
+        </label>
+
+        <label class="node-toggle">
+          <input id="existing-nodes-toggle" type="checkbox" checked />
+          <span>Mostrar nodos existentes</span>
+        </label>
+
+        <div class="node-legend" aria-label="Leyenda de nodos">
+          <span><i class="node-legend__dot existing"></i>Nodo existente</span>
+          <span><i class="node-legend__dot editing"></i>Nodo en edición</span>
+          <span><i class="node-legend__dot middle"></i>Insertar nodo</span>
+        </div>
+
+        <div class="editor-actions">
+          <button id="draw-button" type="button" disabled>Dibujar línea</button>
+          <button id="edit-button" type="button" class="secondary" disabled>Editar líneas</button>
+          <button id="split-button" type="button" class="secondary" disabled>Subdividir línea</button>
+          <button id="remove-button" type="button" class="secondary" disabled>Eliminar líneas</button>
+          <button id="export-button" type="button" class="export" disabled>Descargar GeoJSON</button>
+        </div>
+
+        <p class="editor-help">
+          Haz clic para agregar puntos y doble clic para finalizar. Para crear
+          tramos pequeños, indica los nodos, activa “Subdividir línea” y toca
+          la línea que quieres procesar.
+        </p>
+
+        <div id="editor-status" class="editor-status" role="status" aria-live="polite">
+          Cargando demo…
+        </div>
+      </aside>
+
+      <section class="map-shell">
+        <div id="editor-map" aria-label="Mapa para editar la red peatonal"></div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.js"></script>
+    <script src="editor.js?v=2026-08-06-resubdivide"></script>
+  </body>
+</html>
