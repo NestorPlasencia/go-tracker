@@ -3,22 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#17231d" />
+    <meta name="theme-color" content="#ffffff" />
     <title>Mapa del evento</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><circle cx=%2232%22 cy=%2232%22 r=%2230%22 fill=%22%2317231d%22/><circle cx=%2232%22 cy=%2232%22 r=%2211%22 fill=%22%23d4b878%22/></svg>" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><circle cx=%2232%22 cy=%2232%22 r=%2230%22 fill=%22%23002738%22/><circle cx=%2232%22 cy=%2232%22 r=%2211%22 fill=%22%23007eb6%22/></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css?v=2026-08-06-encoding-fix" />
+    <link rel="stylesheet" href="styles.css?v=2026-10-14-iframe-config" />
   </head>
   <body>
     <header class="topbar home-topbar">
       <div>
         <p id="event-eyebrow" class="eyebrow">Cargando evento…</p>
-        <h1>Encuentra tu destino</h1>
+        <h1 id="app-title">Encuentra tu destino</h1>
       </div>
       <div class="home-topbar__meta">
         <span id="event-place" class="home-topbar__place"></span>
         <label class="demo-index" for="demo-selector">
-          <span>Demos</span>
+          <span id="demo-selector-label">Demos</span>
           <select id="demo-selector" aria-label="Seleccionar otro demo" disabled>
             <option>Cargando…</option>
           </select>
@@ -27,24 +30,30 @@
     </header>
 
     <main class="home-main">
-      <section class="home-hero" aria-labelledby="destinations-title">
-        <div class="home-hero__copy">
-          <p class="eyebrow">Ruta peatonal</p>
-          <h2 id="destinations-title">¿A dónde quieres ir?</h2>
-          <p>Selecciona un nodo y abriremos el mapa con la mejor ruta desde tu ubicación.</p>
-        </div>
-
-      </section>
-
       <section class="destinations-section" aria-label="Nodos disponibles">
         <div id="route-buttons" class="route-buttons destination-grid"></div>
       </section>
 
       <footer class="home-footer">
         <span id="destination-count">Cargando destinos…</span>
-        <span>Rutas peatonales</span>
-        <span>GPS en tiempo real</span>
+        <span id="footer-routes">Rutas peatonales</span>
+        <span id="footer-gps">GPS en tiempo real</span>
       </footer>
+
+      <section class="embed-config" aria-labelledby="embed-config-title">
+        <div class="embed-config__copy">
+          <strong id="embed-config-title">Configuración del iframe</strong>
+          <span id="embed-config-description">Elige la ubicación que usarán las rutas al abrir el embed.</span>
+        </div>
+        <label class="embed-config__test-toggle" for="test-location-toggle">
+          <input id="test-location-toggle" type="checkbox" />
+          <span id="test-location-label">Usar ubicación de prueba</span>
+        </label>
+        <button id="copy-iframe-button" class="embed-config__button" type="button">
+          Copy to embed
+        </button>
+        <p id="embed-config-status" class="embed-config__status" role="status" aria-live="polite"></p>
+      </section>
     </main>
 
     <section
@@ -57,7 +66,7 @@
     >
       <header class="map-modal__header">
         <div>
-          <p class="eyebrow">Ruta seleccionada</p>
+          <p id="map-modal-eyebrow" class="eyebrow">Ruta seleccionada</p>
           <h2 id="map-modal-title">Mapa del evento</h2>
           <p id="route-summary" class="route-summary">
             Preparando la red peatonal…
@@ -65,7 +74,7 @@
         </div>
         <button id="close-map-button" class="close-map-button" type="button" aria-label="Cerrar mapa">
           <span aria-hidden="true">×</span>
-          <span class="close-map-button__text">Cerrar</span>
+          <span id="close-map-label" class="close-map-button__text">Cerrar</span>
         </button>
       </header>
 
@@ -83,7 +92,7 @@
         </aside>
 
         <nav id="external-map-actions" class="external-map-actions" aria-label="Abrir ruta en otra aplicación">
-          <span>Continuar ruta en</span>
+          <span id="external-map-actions-label">Continuar ruta en</span>
           <div>
             <a
               id="google-maps-link"
@@ -104,14 +113,14 @@
 
         <div id="location-loading" class="location-loading" role="status" aria-live="polite">
           <span class="location-loading__spinner" aria-hidden="true"></span>
-          <strong>Obteniendo tu ubicación</strong>
-          <span>Esto puede tardar unos segundos…</span>
+          <strong id="location-loading-title">Obteniendo tu ubicación</strong>
+          <span id="location-loading-message">Esto puede tardar unos segundos…</span>
         </div>
       </div>
     </section>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <p id="app-loading-message" class="sr-only" role="status" aria-live="polite">Cargando demo…</p>
-    <script src="demo-loader.js?v=2026-08-06-demo-index"></script>
+    <script src="demo-loader.js?v=2026-10-14-url-language"></script>
   </body>
 </html>

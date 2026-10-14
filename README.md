@@ -42,6 +42,11 @@ simulada será el centro de los límites configurados para el demo:
 http://127.0.0.1:8080/?demo=washington-dc&testLocation=1
 ```
 
+En la página principal puedes activar o desactivar **Usar ubicación de prueba**
+y pulsar **Copy to embed**. El código copiado conserva esa opción y abre solo
+los destinos en el iframe. El parámetro `lang` acepta `es`, `en`, `pt` o `fr`,
+por ejemplo `?demo=guatemala&lang=fr`.
+
 Cada demo mantiene sus datos y recursos dentro de su propia carpeta:
 
 ```text
@@ -76,5 +81,10 @@ subdivisión usa 10 nodos movibles por defecto y siempre conserva las esquinas
 originales; si una línea ya tiene más vértices, no los elimina. El botón
 **Descargar GeoJSON** genera un nuevo `walkways-osm.json`; reemplaza manualmente
 el archivo correspondiente dentro de la carpeta del demo después de revisarlo.
+**Copiar embed de Vercel** genera el iframe del demo seleccionado con una vista
+compacta que muestra solo los destinos y el pie; al seleccionar un destino, el
+mapa se abre dentro del iframe.
+En el sitio público de Vercel, la ruta `/editor` redirige al inicio; usa el
+editor localmente para que las herramientas no estén disponibles a los visitantes.
 
 Los datos y el mapa derivados de OpenStreetMap deben conservar la atribución visible a OpenStreetMap contributors.

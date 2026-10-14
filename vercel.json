@@ -1,6 +1,18 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/editor",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/editor/:path*",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

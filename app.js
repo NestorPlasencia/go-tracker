@@ -1,4 +1,289 @@
 const DEMO_CONFIG = window.ACTIVE_DEMO;
+const APP_ROOT = DEMO_CONFIG.root || document;
+const APP_HOST = APP_ROOT.host || document.body;
+const SUPPORTED_LANGUAGES = ["es", "en", "pt", "fr"];
+const SEARCH_PARAMS = new URLSearchParams(window.location.search);
+const REQUESTED_LANGUAGE = SEARCH_PARAMS.get("lang")?.toLowerCase().split("-")[0];
+const DEMO_LANGUAGE = (DEMO_CONFIG.locale || "es").toLowerCase().split("-")[0];
+const LANGUAGE = SUPPORTED_LANGUAGES.includes(REQUESTED_LANGUAGE)
+  ? REQUESTED_LANGUAGE
+  : SUPPORTED_LANGUAGES.includes(DEMO_LANGUAGE)
+    ? DEMO_LANGUAGE
+    : "es";
+const MESSAGES = {
+  es: {
+    pageTitle: "Mapa del evento",
+    loadingDemo: "Cargando demo…",
+    eventEyebrow: "Navegación del evento",
+    appTitle: "Encuentra tu destino",
+    demoSelectorAria: "Seleccionar otro demo",
+    destinationsAria: "Destinos disponibles",
+    destinationSingular: "destino",
+    destinationPlural: "destinos",
+    footerRoutes: "Rutas peatonales",
+    footerGps: "GPS en tiempo real",
+    embedTitle: "Configuración del iframe",
+    embedDescription: "Elige la ubicación que usarán las rutas al abrir el embed.",
+    testLocation: "Usar ubicación de prueba",
+    copyEmbed: "Copy to embed",
+    copySuccess: "Iframe copiado. Pégalo en el bloque HTML/Embed de tu sitio.",
+    copyFallback: "No se pudo copiar; descargué un archivo TXT con el iframe.",
+    selectedRoute: "Ruta seleccionada",
+    routeSummaryLoading: "Preparando la red peatonal…",
+    closeMap: "Cerrar",
+    mapAria: "Mapa interactivo del área del evento",
+    externalMapAria: "Abrir ruta en otra aplicación",
+    continueRoute: "Continuar ruta en",
+    locationNotRequested: "Ubicación aún no solicitada",
+    locationRequestIntro: "La pediremos para calcular la ruta.",
+    loadingLocationTitle: "Obteniendo tu ubicación",
+    loadingLocationMessage: "Esto puede tardar unos segundos…",
+    mapAlt: "Mapa del área del evento basado en OpenStreetMap",
+    networkReady: "Red lista: {count} puntos transitables.",
+    networkLoadError: "No se pudo cargar la red peatonal.",
+    legendTitle: "Red peatonal",
+    sidewalks: "Aceras",
+    crossings: "Cruces",
+    steps: "Escaleras",
+    node: "Nodo",
+    navigateToNode: "Navegar a este nodo",
+    simulatedLocation: "Ubicación simulada",
+    dragSimulatedPoint: "Arrastra este punto para probar otra ruta.",
+    currentLocation: "Tu ubicación actual",
+    simulatedLocationMovable: "Ubicación simulada movible",
+    currentLocationAlt: "Tu ubicación actual",
+    gpsTrackingActive: "Seguimiento GPS activo",
+    outsideEventArea: "Estás fuera del área del evento",
+    dragPointHint: "Arrastra el punto azul para probar rutas desde otra ubicación.",
+    approximateAccuracy: "Precisión aproximada: {meters} m.",
+    useExternalMaps: "Usa Google Maps o Apple Maps para llegar. Precisión: {meters} m.",
+    permissionDenied: "El permiso fue rechazado. Habilita la ubicación en los ajustes del navegador.",
+    deviceLocationFailed: "El dispositivo no pudo determinar tu ubicación.",
+    locationTimedOut: "La solicitud tardó demasiado. Inténtalo nuevamente.",
+    locationUnavailable: "Ubicación no disponible",
+    locationUnavailableError: "No pudimos obtener tu ubicación",
+    locationUnexpectedError: "Ocurrió un error al consultar la ubicación.",
+    unsupportedGeolocation: "Este navegador no admite geolocalización.",
+    requestingLocation: "Solicitando tu ubicación…",
+    acceptLocationPermission: "Acepta el permiso del navegador para mostrar tu posición.",
+    routeLocationRequest: "Obteniendo tu ubicación para calcular la ruta a {name}…",
+    outsideRoute: "Estás fuera del área del evento. Usa Google Maps o Apple Maps para llegar a {name}.",
+    walkingNetworkUnavailable: "La red peatonal no está disponible. Recarga la página e inténtalo otra vez.",
+    preparingNetwork: "Preparando la red peatonal…",
+    noRoute: "No se encontró una conexión peatonal hasta {name}.",
+    routeSummary: "Ruta a {name}: {distance} m · {minutes} min aprox. Los extremos punteados conectan con la acera.",
+    openGoogleMaps: "Abrir ruta a {name} en Google Maps",
+    openAppleMaps: "Abrir ruta a {name} en Apple Maps",
+    appleMapsUnavailable: "Apple Maps estará disponible al obtener tu ubicación",
+    iframeTitle: "Mapa peatonal de {place}",
+  },
+  en: {
+    pageTitle: "Event map",
+    loadingDemo: "Loading demo…",
+    eventEyebrow: "Event navigation",
+    appTitle: "Find your destination",
+    demoSelectorAria: "Select another demo",
+    destinationsAria: "Available destinations",
+    destinationSingular: "destination",
+    destinationPlural: "destinations",
+    footerRoutes: "Walking routes",
+    footerGps: "Live GPS",
+    embedTitle: "Iframe settings",
+    embedDescription: "Choose which location routes use when the embed opens.",
+    testLocation: "Use test location",
+    copyEmbed: "Copy to embed",
+    copySuccess: "Iframe copied. Paste it into your site's HTML/Embed block.",
+    copyFallback: "Could not copy; downloaded a TXT file with the iframe.",
+    selectedRoute: "Selected route",
+    routeSummaryLoading: "Preparing the walking network…",
+    closeMap: "Close",
+    mapAria: "Interactive map of the event area",
+    externalMapAria: "Open route in another app",
+    continueRoute: "Continue route in",
+    locationNotRequested: "Location not requested yet",
+    locationRequestIntro: "We’ll request it to calculate the route.",
+    loadingLocationTitle: "Getting your location",
+    loadingLocationMessage: "This may take a few seconds…",
+    mapAlt: "Map of the event area based on OpenStreetMap",
+    networkReady: "Network ready: {count} walkable points.",
+    networkLoadError: "Could not load the walking network.",
+    legendTitle: "Walking network",
+    sidewalks: "Sidewalks",
+    crossings: "Crossings",
+    steps: "Stairs",
+    node: "Node",
+    navigateToNode: "Navigate to this node",
+    simulatedLocation: "Simulated location",
+    dragSimulatedPoint: "Drag this point to try another route.",
+    currentLocation: "Your current location",
+    simulatedLocationMovable: "Movable simulated location",
+    currentLocationAlt: "Your current location",
+    gpsTrackingActive: "GPS tracking active",
+    outsideEventArea: "You are outside the event area",
+    dragPointHint: "Drag the blue dot to try routes from another location.",
+    approximateAccuracy: "Approximate accuracy: {meters} m.",
+    useExternalMaps: "Use Google Maps or Apple Maps to get there. Accuracy: {meters} m.",
+    permissionDenied: "Permission denied. Enable location in your browser settings.",
+    deviceLocationFailed: "Your device could not determine your location.",
+    locationTimedOut: "The request timed out. Please try again.",
+    locationUnavailable: "Location unavailable",
+    locationUnavailableError: "We couldn't get your location",
+    locationUnexpectedError: "An error occurred while checking your location.",
+    unsupportedGeolocation: "This browser does not support geolocation.",
+    requestingLocation: "Requesting your location…",
+    acceptLocationPermission: "Allow location access in your browser to show your position.",
+    routeLocationRequest: "Getting your location to calculate the route to {name}…",
+    outsideRoute: "You are outside the event area. Use Google Maps or Apple Maps to get to {name}.",
+    walkingNetworkUnavailable: "The walking network is unavailable. Reload the page and try again.",
+    preparingNetwork: "Preparing the walking network…",
+    noRoute: "No walking connection to {name} was found.",
+    routeSummary: "Route to {name}: {distance} m · about {minutes} min. Dotted ends connect to the sidewalk.",
+    openGoogleMaps: "Open route to {name} in Google Maps",
+    openAppleMaps: "Open route to {name} in Apple Maps",
+    appleMapsUnavailable: "Apple Maps will be available when your location is known",
+    iframeTitle: "Walking map for {place}",
+  },
+  pt: {
+    pageTitle: "Mapa do evento",
+    loadingDemo: "Carregando demo…",
+    eventEyebrow: "Navegação do evento",
+    appTitle: "Encontre seu destino",
+    demoSelectorAria: "Selecionar outro demo",
+    destinationsAria: "Destinos disponíveis",
+    destinationSingular: "destino",
+    destinationPlural: "destinos",
+    footerRoutes: "Rotas a pé",
+    footerGps: "GPS em tempo real",
+    embedTitle: "Configuração do iframe",
+    embedDescription: "Escolha a localização usada para calcular rotas ao abrir o embed.",
+    testLocation: "Usar localização de teste",
+    copyEmbed: "Copiar iframe",
+    copySuccess: "Iframe copiado. Cole-o no bloco HTML/Embed do seu site.",
+    copyFallback: "Não foi possível copiar; baixei um arquivo TXT com o iframe.",
+    selectedRoute: "Rota selecionada",
+    routeSummaryLoading: "Preparando a rede para pedestres…",
+    closeMap: "Fechar",
+    mapAria: "Mapa interativo da área do evento",
+    externalMapAria: "Abrir rota em outro aplicativo",
+    continueRoute: "Continuar rota em",
+    locationNotRequested: "Localização ainda não solicitada",
+    locationRequestIntro: "Vamos solicitá-la para calcular a rota.",
+    loadingLocationTitle: "Obtendo sua localização",
+    loadingLocationMessage: "Isso pode levar alguns segundos…",
+    mapAlt: "Mapa da área do evento baseado no OpenStreetMap",
+    networkReady: "Rede pronta: {count} pontos caminháveis.",
+    networkLoadError: "Não foi possível carregar a rede para pedestres.",
+    legendTitle: "Rede para pedestres",
+    sidewalks: "Calçadas",
+    crossings: "Travessias",
+    steps: "Escadas",
+    node: "Nó",
+    navigateToNode: "Navegar até este ponto",
+    simulatedLocation: "Localização simulada",
+    dragSimulatedPoint: "Arraste este ponto para testar outra rota.",
+    currentLocation: "Sua localização atual",
+    simulatedLocationMovable: "Localização simulada móvel",
+    currentLocationAlt: "Sua localização atual",
+    gpsTrackingActive: "Rastreamento GPS ativo",
+    outsideEventArea: "Você está fora da área do evento",
+    dragPointHint: "Arraste o ponto azul para testar rotas de outra localização.",
+    approximateAccuracy: "Precisão aproximada: {meters} m.",
+    useExternalMaps: "Use o Google Maps ou o Apple Maps para chegar. Precisão: {meters} m.",
+    permissionDenied: "Permissão negada. Ative a localização nas configurações do navegador.",
+    deviceLocationFailed: "Não foi possível determinar sua localização.",
+    locationTimedOut: "A solicitação demorou muito. Tente novamente.",
+    locationUnavailable: "Localização indisponível",
+    locationUnavailableError: "Não foi possível obter sua localização",
+    locationUnexpectedError: "Ocorreu um erro ao consultar a localização.",
+    unsupportedGeolocation: "Este navegador não oferece suporte à geolocalização.",
+    requestingLocation: "Solicitando sua localização…",
+    acceptLocationPermission: "Permita o acesso à localização no navegador para mostrar sua posição.",
+    routeLocationRequest: "Obtendo sua localização para calcular a rota até {name}…",
+    outsideRoute: "Você está fora da área do evento. Use o Google Maps ou o Apple Maps para chegar a {name}.",
+    walkingNetworkUnavailable: "A rede para pedestres está indisponível. Recarregue a página e tente novamente.",
+    preparingNetwork: "Preparando a rede para pedestres…",
+    noRoute: "Não foi encontrada uma conexão a pé até {name}.",
+    routeSummary: "Rota até {name}: {distance} m · aprox. {minutes} min. As linhas pontilhadas conectam à calçada.",
+    openGoogleMaps: "Abrir rota até {name} no Google Maps",
+    openAppleMaps: "Abrir rota até {name} no Apple Maps",
+    appleMapsUnavailable: "O Apple Maps estará disponível quando sua localização for obtida",
+    iframeTitle: "Mapa para pedestres de {place}",
+  },
+  fr: {
+    pageTitle: "Carte de l’événement",
+    loadingDemo: "Chargement de la démo…",
+    eventEyebrow: "Navigation de l’événement",
+    appTitle: "Trouvez votre destination",
+    demoSelectorAria: "Sélectionner une autre démo",
+    destinationsAria: "Destinations disponibles",
+    destinationSingular: "destination",
+    destinationPlural: "destinations",
+    footerRoutes: "Itinéraires piétonniers",
+    footerGps: "GPS en temps réel",
+    embedTitle: "Configuration de l’iframe",
+    embedDescription: "Choisissez la position utilisée pour calculer l’itinéraire dans l’embed.",
+    testLocation: "Utiliser une position de test",
+    copyEmbed: "Copier l’iframe",
+    copySuccess: "Iframe copié. Collez-le dans le bloc HTML/Embed de votre site.",
+    copyFallback: "Copie impossible ; un fichier TXT contenant l’iframe a été téléchargé.",
+    selectedRoute: "Itinéraire sélectionné",
+    routeSummaryLoading: "Préparation du réseau piéton…",
+    closeMap: "Fermer",
+    mapAria: "Carte interactive de la zone de l’événement",
+    externalMapAria: "Ouvrir l’itinéraire dans une autre application",
+    continueRoute: "Continuer l’itinéraire avec",
+    locationNotRequested: "Position pas encore demandée",
+    locationRequestIntro: "Elle sera demandée pour calculer l’itinéraire.",
+    loadingLocationTitle: "Localisation en cours",
+    loadingLocationMessage: "Cela peut prendre quelques secondes…",
+    mapAlt: "Carte de la zone de l’événement basée sur OpenStreetMap",
+    networkReady: "Réseau prêt : {count} points praticables.",
+    networkLoadError: "Impossible de charger le réseau piéton.",
+    legendTitle: "Réseau piéton",
+    sidewalks: "Trottoirs",
+    crossings: "Passages piétons",
+    steps: "Escaliers",
+    node: "Point",
+    navigateToNode: "Itinéraire vers ce point",
+    simulatedLocation: "Position simulée",
+    dragSimulatedPoint: "Faites glisser ce point pour tester un autre itinéraire.",
+    currentLocation: "Votre position actuelle",
+    simulatedLocationMovable: "Position simulée déplaçable",
+    currentLocationAlt: "Votre position actuelle",
+    gpsTrackingActive: "Suivi GPS actif",
+    outsideEventArea: "Vous êtes en dehors de la zone de l’événement",
+    dragPointHint: "Faites glisser le point bleu pour tester un itinéraire depuis une autre position.",
+    approximateAccuracy: "Précision approximative : {meters} m.",
+    useExternalMaps: "Utilisez Google Maps ou Apple Plans pour vous y rendre. Précision : {meters} m.",
+    permissionDenied: "Autorisation refusée. Activez la localisation dans les paramètres du navigateur.",
+    deviceLocationFailed: "Votre appareil n’a pas pu déterminer votre position.",
+    locationTimedOut: "La demande a expiré. Veuillez réessayer.",
+    locationUnavailable: "Position indisponible",
+    locationUnavailableError: "Impossible d’obtenir votre position",
+    locationUnexpectedError: "Une erreur est survenue lors de la recherche de votre position.",
+    unsupportedGeolocation: "Ce navigateur ne prend pas en charge la géolocalisation.",
+    requestingLocation: "Demande de votre position…",
+    acceptLocationPermission: "Autorisez l’accès à votre position dans le navigateur pour l’afficher.",
+    routeLocationRequest: "Recherche de votre position pour calculer l’itinéraire vers {name}…",
+    outsideRoute: "Vous êtes en dehors de la zone de l’événement. Utilisez Google Maps ou Apple Plans pour rejoindre {name}.",
+    walkingNetworkUnavailable: "Le réseau piéton est indisponible. Rechargez la page et réessayez.",
+    preparingNetwork: "Préparation du réseau piéton…",
+    noRoute: "Aucun itinéraire piéton vers {name} n’a été trouvé.",
+    routeSummary: "Itinéraire vers {name} : {distance} m · environ {minutes} min. Les pointillés relient au trottoir.",
+    openGoogleMaps: "Ouvrir l’itinéraire vers {name} dans Google Maps",
+    openAppleMaps: "Ouvrir l’itinéraire vers {name} dans Apple Plans",
+    appleMapsUnavailable: "Apple Plans sera disponible lorsque votre position sera connue",
+    iframeTitle: "Carte piétonne de {place}",
+  },
+};
+
+function translate(key, values = {}) {
+  return MESSAGES[LANGUAGE][key].replace(
+    /\{(\w+)\}/g,
+    (_match, name) => String(values[name] ?? ""),
+  );
+}
+
 const MAP_BOUNDS = L.latLngBounds(
   DEMO_CONFIG.bounds.southWest,
   DEMO_CONFIG.bounds.northEast,
@@ -6,15 +291,41 @@ const MAP_BOUNDS = L.latLngBounds(
 const EVENT_NODES = DEMO_CONFIG.nodes;
 const MAP_OPTIONS = DEMO_CONFIG.mapOptions || {};
 const IS_TEST_LOCATION =
-  new URLSearchParams(window.location.search).get("testLocation") === "1";
+  SEARCH_PARAMS.get("testLocation") === "1";
+const IS_EMBED = SEARCH_PARAMS.get("embed") === "1";
+const PUBLIC_APP_URL = "https://go-tracker-ten.vercel.app/";
 
-document.title = DEMO_CONFIG.title;
-document.querySelector("#event-eyebrow").textContent = DEMO_CONFIG.eyebrow;
-document.querySelector("#event-place").textContent = DEMO_CONFIG.place;
-document.querySelector("#destination-count").textContent =
-  `${EVENT_NODES.length} ${EVENT_NODES.length === 1 ? "destino" : "destinos"}`;
+if (IS_EMBED) APP_HOST.classList.add("is-embedded");
 
-const map = L.map("map", {
+document.documentElement.lang = LANGUAGE;
+if (APP_ROOT === document) document.title = translate("pageTitle");
+APP_ROOT.querySelector("#event-eyebrow").textContent = translate("eventEyebrow");
+APP_ROOT.querySelector("#app-title").textContent = translate("appTitle");
+APP_ROOT.querySelector("#event-place").textContent = DEMO_CONFIG.place;
+APP_ROOT.querySelector("#demo-selector").setAttribute("aria-label", translate("demoSelectorAria"));
+APP_ROOT.querySelector(".destinations-section").setAttribute("aria-label", translate("destinationsAria"));
+APP_ROOT.querySelector("#destination-count").textContent = `${new Intl.NumberFormat(LANGUAGE).format(EVENT_NODES.length)} ${translate(EVENT_NODES.length === 1 ? "destinationSingular" : "destinationPlural")}`;
+APP_ROOT.querySelector("#footer-routes").textContent = translate("footerRoutes");
+APP_ROOT.querySelector("#footer-gps").textContent = translate("footerGps");
+APP_ROOT.querySelector("#embed-config-title").textContent = translate("embedTitle");
+APP_ROOT.querySelector("#embed-config-description").textContent = translate("embedDescription");
+APP_ROOT.querySelector("#test-location-label").textContent = translate("testLocation");
+APP_ROOT.querySelector("#copy-iframe-button").textContent = translate("copyEmbed");
+APP_ROOT.querySelector("#map-modal-eyebrow").textContent = translate("selectedRoute");
+APP_ROOT.querySelector("#map-modal-title").textContent = translate("pageTitle");
+APP_ROOT.querySelector("#route-summary").textContent = translate("routeSummaryLoading");
+APP_ROOT.querySelector("#close-map-button").setAttribute("aria-label", translate("closeMap"));
+APP_ROOT.querySelector("#close-map-label").textContent = translate("closeMap");
+APP_ROOT.querySelector("#map").setAttribute("aria-label", translate("mapAria"));
+APP_ROOT.querySelector("#external-map-actions").setAttribute("aria-label", translate("externalMapAria"));
+APP_ROOT.querySelector("#external-map-actions-label").textContent = translate("continueRoute");
+APP_ROOT.querySelector("#location-status-title").textContent = translate("locationNotRequested");
+APP_ROOT.querySelector("#location-status-message").textContent = translate("locationRequestIntro");
+APP_ROOT.querySelector("#location-loading-title").textContent = translate("loadingLocationTitle");
+APP_ROOT.querySelector("#location-loading-message").textContent = translate("loadingLocationMessage");
+APP_ROOT.querySelector("#app-loading-message").textContent = translate("loadingDemo");
+
+const map = L.map(APP_ROOT.querySelector("#map"), {
   attributionControl: false,
   maxBounds: MAP_BOUNDS.pad(MAP_OPTIONS.maxBoundsPadding ?? 0.15),
   maxBoundsViscosity: 0.8,
@@ -29,7 +340,7 @@ map.getPane("baseImage").style.pointerEvents = "none";
 
 L.imageOverlay(DEMO_CONFIG.assets.map, MAP_BOUNDS, {
   pane: "baseImage",
-  alt: DEMO_CONFIG.mapAlt,
+  alt: translate("mapAlt"),
   interactive: false,
 }).addTo(map);
 
@@ -43,7 +354,7 @@ L.control
 map.fitBounds(MAP_BOUNDS, { animate: false, padding: [12, 12] });
 
 L.rectangle(MAP_BOUNDS, {
-  color: "#2f5e46",
+  color: "#005d86",
   weight: 1,
   opacity: 0.45,
   fill: false,
@@ -59,7 +370,7 @@ function walkwayStyle(feature) {
 
   if (footway === "crossing") {
     return {
-      color: "#1976d2",
+      color: "#009ade",
       weight: 2,
       opacity: 0.32,
       dashArray: "5 5",
@@ -68,7 +379,7 @@ function walkwayStyle(feature) {
 
   if (highway === "steps") {
     return {
-      color: "#bc4734",
+      color: "#004e70",
       weight: 2,
       opacity: 0.38,
       dashArray: "2 4",
@@ -77,14 +388,14 @@ function walkwayStyle(feature) {
 
   if (footway === "traffic_island") {
     return {
-      color: "#b7872f",
+      color: "#007eb6",
       weight: 2,
       opacity: 0.32,
     };
   }
 
   return {
-    color: footway === "sidewalk" ? "#23845d" : "#52665b",
+    color: footway === "sidewalk" ? "#005d86" : "#52606a",
     weight: footway === "sidewalk" ? 1.8 : 1.5,
     opacity: 0.28,
   };
@@ -99,7 +410,7 @@ const crossingPointsLayer = L.geoJSON(null, {
       radius: 2.5,
       color: "#fff",
       weight: 1,
-      fillColor: "#1976d2",
+      fillColor: "#009ade",
       opacity: 0.45,
       fillOpacity: 0.35,
     }),
@@ -459,13 +770,15 @@ fetch(DEMO_CONFIG.assets.walkways)
     if (pendingRouteNode && userCoordinates) {
       calculateWalkingRoute(pendingRouteNode);
     } else {
-      routeSummary.textContent = `Red lista: ${walkingGraph.nodes.size.toLocaleString(DEMO_CONFIG.locale || "es")} puntos transitables.`;
+      routeSummary.textContent = translate("networkReady", {
+        count: walkingGraph.nodes.size.toLocaleString(LANGUAGE),
+      });
     }
   })
   .catch((error) => {
     console.error(error);
     graphLoadError = error;
-    routeSummary.textContent = "No se pudo cargar la red peatonal.";
+    routeSummary.textContent = translate("networkLoadError");
   });
 
 map.on("zoomend", updateCrossingPointVisibility);
@@ -474,10 +787,10 @@ const walkwayLegend = L.control({ position: "bottomleft" });
 walkwayLegend.onAdd = () => {
   const container = L.DomUtil.create("div", "walkway-legend");
   container.innerHTML = `
-    <strong>Red peatonal</strong>
-    <span><i class="walkway-legend__line walkway-legend__line--sidewalk"></i>Aceras</span>
-    <span><i class="walkway-legend__line walkway-legend__line--crossing"></i>Cruces</span>
-    <span><i class="walkway-legend__line walkway-legend__line--steps"></i>Escaleras</span>
+    <strong>${translate("legendTitle")}</strong>
+    <span><i class="walkway-legend__line walkway-legend__line--sidewalk"></i>${translate("sidewalks")}</span>
+    <span><i class="walkway-legend__line walkway-legend__line--crossing"></i>${translate("crossings")}</span>
+    <span><i class="walkway-legend__line walkway-legend__line--steps"></i>${translate("steps")}</span>
   `;
   return container;
 };
@@ -498,7 +811,7 @@ EVENT_NODES.forEach((node, index) => {
   const marker = L.marker(node.coordinates, {
     icon: createNodeIcon(nodeNumber),
     title: node.name,
-    alt: `Nodo ${node.name}`,
+    alt: `${translate("node")} ${node.name}`,
     keyboard: true,
   }).addTo(map);
 
@@ -512,11 +825,11 @@ EVENT_NODES.forEach((node, index) => {
   marker.bindPopup(
     `
       <article class="node-popup">
-        <span>Nodo ${nodeNumber}</span>
+        <span>${translate("node")} ${nodeNumber}</span>
         <strong>${node.name}</strong>
         <small>${node.coordinates[0].toFixed(6)}, ${node.coordinates[1].toFixed(6)}</small>
         <button class="node-popup__navigate" type="button">
-          Navegar a este nodo
+          ${translate("navigateToNode")}
         </button>
       </article>
     `,
@@ -539,20 +852,23 @@ EVENT_NODES.forEach((node, index) => {
   });
 });
 
-const locationStatusDot = document.querySelector("#location-status-dot");
-const locationStatusTitle = document.querySelector("#location-status-title");
-const locationStatusMessage = document.querySelector("#location-status-message");
-const routeButtons = document.querySelector("#route-buttons");
-const routeSummary = document.querySelector("#route-summary");
-const mapModal = document.querySelector("#map-modal");
-const mapModalTitle = document.querySelector("#map-modal-title");
-const closeMapButton = document.querySelector("#close-map-button");
-const locationLoading = document.querySelector("#location-loading");
-const googleMapsLink = document.querySelector("#google-maps-link");
-const appleMapsLink = document.querySelector("#apple-maps-link");
-const externalMapActions = document.querySelector("#external-map-actions");
-const homeMain = document.querySelector(".home-main");
-const homeTopbar = document.querySelector(".home-topbar");
+const locationStatusDot = APP_ROOT.querySelector("#location-status-dot");
+const locationStatusTitle = APP_ROOT.querySelector("#location-status-title");
+const locationStatusMessage = APP_ROOT.querySelector("#location-status-message");
+const routeButtons = APP_ROOT.querySelector("#route-buttons");
+const routeSummary = APP_ROOT.querySelector("#route-summary");
+const testLocationToggle = APP_ROOT.querySelector("#test-location-toggle");
+const copyIframeButton = APP_ROOT.querySelector("#copy-iframe-button");
+const embedConfigStatus = APP_ROOT.querySelector("#embed-config-status");
+const mapModal = APP_ROOT.querySelector("#map-modal");
+const mapModalTitle = APP_ROOT.querySelector("#map-modal-title");
+const closeMapButton = APP_ROOT.querySelector("#close-map-button");
+const locationLoading = APP_ROOT.querySelector("#location-loading");
+const googleMapsLink = APP_ROOT.querySelector("#google-maps-link");
+const appleMapsLink = APP_ROOT.querySelector("#apple-maps-link");
+const externalMapActions = APP_ROOT.querySelector("#external-map-actions");
+const homeMain = APP_ROOT.querySelector(".home-main");
+const homeTopbar = APP_ROOT.querySelector(".home-topbar");
 
 let userLocationMarker;
 let userCoordinates;
@@ -630,16 +946,20 @@ function showUserLocation(position) {
   if (!userLocationMarker) {
     userLocationMarker = L.marker(coordinates, {
       icon: userLocationIcon,
-      title: IS_TEST_LOCATION ? "Ubicación simulada movible" : "Tu ubicación",
-      alt: IS_TEST_LOCATION ? "Ubicación simulada movible" : "Tu ubicación actual",
+      title: IS_TEST_LOCATION
+        ? translate("simulatedLocationMovable")
+        : translate("currentLocation"),
+      alt: IS_TEST_LOCATION
+        ? translate("simulatedLocationMovable")
+        : translate("currentLocationAlt"),
       zIndexOffset: 1000,
       draggable: IS_TEST_LOCATION,
       autoPan: IS_TEST_LOCATION,
     })
       .bindPopup(
         IS_TEST_LOCATION
-          ? "<strong>Ubicación simulada</strong><br><small>Arrastra este punto para probar otra ruta.</small>"
-          : "<strong>Tu ubicación actual</strong>",
+          ? `<strong>${translate("simulatedLocation")}</strong><br><small>${translate("dragSimulatedPoint")}</small>`
+          : `<strong>${translate("currentLocation")}</strong>`,
       )
       .addTo(map);
 
@@ -662,14 +982,14 @@ function showUserLocation(position) {
     isInsideEvent ? "success" : "error",
     isInsideEvent
       ? isSimulated
-        ? "Ubicación simulada"
-        : "Seguimiento GPS activo"
-      : "Estás fuera del área del evento",
+        ? translate("simulatedLocation")
+        : translate("gpsTrackingActive")
+      : translate("outsideEventArea"),
     isInsideEvent
       ? isSimulated
-        ? "Arrastra el punto azul para probar rutas desde otra ubicación."
-        : `Precisión aproximada: ${accuracyLabel} m.`
-      : `Usa Google Maps o Apple Maps para llegar. Precisión: ${accuracyLabel} m.`,
+        ? translate("dragPointHint")
+        : translate("approximateAccuracy", { meters: accuracyLabel })
+      : translate("useExternalMaps", { meters: accuracyLabel }),
   );
   externalMapActions.classList.toggle("is-recommended", !isInsideEvent);
 
@@ -715,9 +1035,9 @@ function stopLocationTracking() {
 
 function handleLocationError(error) {
   const messages = {
-    1: "El permiso fue rechazado. Habilita la ubicación en los ajustes del navegador.",
-    2: "El dispositivo no pudo determinar tu ubicación.",
-    3: "La solicitud tardó demasiado. Inténtalo nuevamente.",
+    1: translate("permissionDenied"),
+    2: translate("deviceLocationFailed"),
+    3: translate("locationTimedOut"),
   };
 
   setLocationLoading(false);
@@ -728,12 +1048,13 @@ function handleLocationError(error) {
 
   updateLocationStatus(
     "error",
-    "No pudimos obtener tu ubicación",
-    messages[error.code] || "Ocurrió un error al consultar la ubicación.",
+    translate("locationUnavailableError"),
+    messages[error.code] || translate("locationUnexpectedError"),
   );
 
   if (pendingRouteNode) {
-    routeSummary.textContent = messages[error.code] || "No se pudo obtener tu ubicación.";
+    routeSummary.textContent =
+      messages[error.code] || translate("locationUnavailableError");
   }
 }
 
@@ -758,8 +1079,8 @@ function requestUserLocation(options = {}) {
     setLocationLoading(false);
     updateLocationStatus(
       "error",
-      "Ubicación no disponible",
-      "Este navegador no admite geolocalización.",
+      translate("locationUnavailable"),
+      translate("unsupportedGeolocation"),
     );
     return;
   }
@@ -768,8 +1089,8 @@ function requestUserLocation(options = {}) {
   setLocationLoading(showLoader);
   updateLocationStatus(
     "loading",
-    "Solicitando tu ubicación…",
-    "Acepta el permiso del navegador para mostrar tu posición.",
+    translate("requestingLocation"),
+    translate("acceptLocationPermission"),
   );
 
   locationWatchId = navigator.geolocation.watchPosition(
@@ -788,7 +1109,9 @@ function calculateWalkingRoute(node, options = {}) {
   pendingRouteNode = node;
 
   if (!userCoordinates) {
-    routeSummary.textContent = `Obteniendo tu ubicación para calcular la ruta a ${node.name}…`;
+    routeSummary.textContent = translate("routeLocationRequest", {
+      name: node.name,
+    });
     requestUserLocation();
     return;
   }
@@ -799,19 +1122,19 @@ function calculateWalkingRoute(node, options = {}) {
       activeRoute = undefined;
     }
     externalMapActions.classList.add("is-recommended");
-    routeSummary.textContent = `Estás fuera del área del evento. Usa Google Maps o Apple Maps para llegar a ${node.name}.`;
+    routeSummary.textContent = translate("outsideRoute", { name: node.name });
     return;
   }
 
   externalMapActions.classList.remove("is-recommended");
 
   if (graphLoadError) {
-    routeSummary.textContent = "La red peatonal no está disponible. Recarga la página e inténtalo otra vez.";
+    routeSummary.textContent = translate("walkingNetworkUnavailable");
     return;
   }
 
   if (!walkingGraph) {
-    routeSummary.textContent = "Preparando la red peatonal…";
+    routeSummary.textContent = translate("preparingNetwork");
     return;
   }
 
@@ -824,7 +1147,7 @@ function calculateWalkingRoute(node, options = {}) {
   );
 
   if (!result) {
-    routeSummary.textContent = `No se encontró una conexión peatonal hasta ${node.name}.`;
+    routeSummary.textContent = translate("noRoute", { name: node.name });
     return;
   }
 
@@ -834,7 +1157,7 @@ function calculateWalkingRoute(node, options = {}) {
 
   const routeLayers = [];
   const connectorStyle = {
-    color: "#1976d2",
+    color: "#78bde0",
     weight: 3,
     opacity: 0.75,
     dashArray: "3 8",
@@ -862,7 +1185,7 @@ function calculateWalkingRoute(node, options = {}) {
 
     routeLayers.push(
       L.polyline(result.path, {
-        color: "#1976d2",
+        color: "#007eb6",
         weight: 6.5,
         opacity: 1,
         lineCap: "round",
@@ -882,7 +1205,7 @@ function calculateWalkingRoute(node, options = {}) {
   pendingRouteNode = undefined;
   lastRouteOrigin = L.latLng(userCoordinates.lat, userCoordinates.lng);
 
-  document.querySelectorAll(".route-button").forEach((button) => {
+  APP_ROOT.querySelectorAll(".route-button").forEach((button) => {
     const isActive = button.dataset.nodeId === node.id;
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
@@ -892,7 +1215,11 @@ function calculateWalkingRoute(node, options = {}) {
     result.distance + snapPair.startDistance + snapPair.endDistance,
   );
   const walkingMinutes = Math.max(1, Math.ceil(distanceMeters / 80));
-  routeSummary.textContent = `Ruta a ${node.name}: ${distanceMeters} m · ${walkingMinutes} min aprox. Los extremos punteados conectan con la acera.`;
+  routeSummary.textContent = translate("routeSummary", {
+    name: node.name,
+    distance: distanceMeters.toLocaleString(LANGUAGE),
+    minutes: walkingMinutes,
+  });
   if (fitMap && activeRoute.getBounds().isValid()) {
     map.fitBounds(activeRoute.getBounds(), {
       padding: [70, 70],
@@ -906,20 +1233,26 @@ function updateExternalMapLinks(node) {
   const destination = encodeURIComponent(`${latitude},${longitude}`);
 
   googleMapsLink.href = `https://www.google.com/maps/dir/?api=1&destination=${destination}&travelmode=walking`;
-  googleMapsLink.setAttribute("aria-label", `Abrir ruta a ${node.name} en Google Maps`);
+  googleMapsLink.setAttribute(
+    "aria-label",
+    translate("openGoogleMaps", { name: node.name }),
+  );
 
   if (userCoordinates) {
     const source = encodeURIComponent(`${userCoordinates.lat},${userCoordinates.lng}`);
     appleMapsLink.href = `https://maps.apple.com/directions?source=${source}&destination=${destination}&mode=walking`;
     appleMapsLink.classList.remove("is-disabled");
     appleMapsLink.setAttribute("aria-disabled", "false");
-    appleMapsLink.setAttribute("aria-label", `Abrir ruta a ${node.name} en Apple Maps`);
+    appleMapsLink.setAttribute(
+      "aria-label",
+      translate("openAppleMaps", { name: node.name }),
+    );
     appleMapsLink.tabIndex = 0;
   } else {
     appleMapsLink.removeAttribute("href");
     appleMapsLink.classList.add("is-disabled");
     appleMapsLink.setAttribute("aria-disabled", "true");
-    appleMapsLink.setAttribute("aria-label", "Apple Maps estará disponible al obtener tu ubicación");
+    appleMapsLink.setAttribute("aria-label", translate("appleMapsUnavailable"));
     appleMapsLink.tabIndex = -1;
   }
 }
@@ -929,7 +1262,7 @@ function selectDestination(node) {
   mapModalTitle.textContent = node.name;
   updateExternalMapLinks(node);
 
-  document.querySelectorAll(".route-button").forEach((button) => {
+  APP_ROOT.querySelectorAll(".route-button").forEach((button) => {
     const isActive = button.dataset.nodeId === node.id;
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
@@ -947,7 +1280,7 @@ function openMapModal(node, triggerButton) {
   selectDestination(node);
   mapModal.classList.add("is-open");
   mapModal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("modal-open");
+  APP_HOST.classList.add("modal-open");
   homeMain.inert = true;
   homeTopbar.inert = true;
 
@@ -966,7 +1299,7 @@ function closeMapModal() {
   setLocationLoading(false);
   mapModal.classList.remove("is-open");
   mapModal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("modal-open");
+  APP_HOST.classList.remove("modal-open");
   homeMain.inert = false;
   homeTopbar.inert = false;
   lastFocusedRouteButton?.focus();
@@ -986,8 +1319,62 @@ EVENT_NODES.forEach((node, index) => {
   routeButtons.append(button);
 });
 
+if (testLocationToggle) {
+  testLocationToggle.checked = IS_TEST_LOCATION;
+  testLocationToggle.addEventListener("change", () => {
+    const url = new URL(window.location.href);
+    if (testLocationToggle.checked) {
+      url.searchParams.set("testLocation", "1");
+    } else {
+      url.searchParams.delete("testLocation");
+    }
+    window.location.assign(url.href);
+  });
+}
+
+copyIframeButton?.addEventListener("click", async () => {
+  const embedUrl = new URL(PUBLIC_APP_URL);
+  embedUrl.searchParams.set("demo", DEMO_CONFIG.id);
+  embedUrl.searchParams.set("embed", "1");
+  embedUrl.searchParams.set("lang", LANGUAGE);
+  if (testLocationToggle?.checked) {
+    embedUrl.searchParams.set("testLocation", "1");
+  }
+
+  const title = translate("iframeTitle", {
+    place: DEMO_CONFIG.place || DEMO_CONFIG.id,
+  }).replace(
+    /[&"<]/g,
+    (character) => ({ "&": "&amp;", '"': "&quot;", "<": "&lt;" })[character],
+  );
+  const iframeCode = `<iframe
+  src="${embedUrl.href}"
+  title="${title}"
+  width="100%"
+  height="360"
+  style="border: 0"
+  loading="lazy"
+  allow="geolocation"
+></iframe>`;
+
+  try {
+    await navigator.clipboard.writeText(iframeCode);
+    embedConfigStatus.textContent = translate("copySuccess");
+  } catch (error) {
+    console.error(error);
+    const blob = new Blob([iframeCode], { type: "text/plain;charset=utf-8" });
+    const downloadUrl = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = downloadUrl;
+    anchor.download = `${DEMO_CONFIG.id}-iframe.txt`;
+    anchor.click();
+    setTimeout(() => URL.revokeObjectURL(downloadUrl), 0);
+    embedConfigStatus.textContent = translate("copyFallback");
+  }
+});
+
 closeMapButton.addEventListener("click", closeMapModal);
-document.addEventListener("keydown", (event) => {
+APP_ROOT.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && mapModal.classList.contains("is-open")) {
     closeMapModal();
   }

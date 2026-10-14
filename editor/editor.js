@@ -7,8 +7,11 @@ const editButton = document.querySelector("#edit-button");
 const splitButton = document.querySelector("#split-button");
 const removeButton = document.querySelector("#remove-button");
 const exportButton = document.querySelector("#export-button");
+const embedExportButton = document.querySelector("#embed-export-button");
 const statusElement = document.querySelector("#editor-status");
 const openDemoLink = document.querySelector("#open-demo-link");
+
+const PUBLIC_APP_URL = "https://go-tracker-ten.vercel.app/";
 
 let manifest;
 let activeDemo;
@@ -386,8 +389,15 @@ async function loadDemo(demoId) {
       },
     ).addTo(referenceLayers);
 
-    activeDemo = { id: demoId, data };
-    [drawButton, editButton, splitButton, removeButton, exportButton].forEach((button) => {
+    activeDemo = { id: demoId, data, dataUrl: dataUrl.href, mapUrl, walkwaysUrl };
+    [
+      drawButton,
+      editButton,
+      splitButton,
+      removeButton,
+      exportButton,
+      embedExportButton,
+    ].forEach((button) => {
       button.disabled = false;
     });
     openDemoLink.href = `../?demo=${encodeURIComponent(demoId)}&testLocation=1`;
@@ -469,6 +479,48 @@ exportButton.addEventListener("click", () => {
   anchor.click();
   URL.revokeObjectURL(downloadUrl);
   setStatus(`Archivo exportado con ${output.features.length} elementos.`);
+});
+
+embedExportButton.addEventListener("click", async () => {
+  if (!activeDemo) return;
+
+  embedExportButton.disabled = true;
+
+  const demoUrl = new URL(PUBLIC_APP_URL);
+  demoUrl.searchParams.set("demo", activeDemo.id);
+  demoUrl.searchParams.set("embed", "1");
+  const title = `Mapa peatonal de ${activeDemo.data.place || activeDemo.id}`.replace(
+    /[&"<]/g,
+    (character) => ({ "&": "&amp;", '"': "&quot;", "<": "&lt;" })[character],
+  );
+  const embedCode = `<iframe
+  src="${demoUrl.href}"
+  title="${title}"
+  width="100%"
+  height="360"
+  style="border: 0"
+  loading="lazy"
+  allow="geolocation"
+></iframe>`;
+
+  try {
+    try {
+      await navigator.clipboard.writeText(embedCode);
+      setStatus("Código embed copiado. Pégalo en el bloque HTML/Embed de tu sitio.");
+    } catch (error) {
+      console.error(error);
+      const blob = new Blob([embedCode], { type: "text/plain;charset=utf-8" });
+      const downloadUrl = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = downloadUrl;
+      anchor.download = `${activeDemo.id}-vercel-embed.txt`;
+      anchor.click();
+      setTimeout(() => URL.revokeObjectURL(downloadUrl), 0);
+      setStatus("No se pudo copiar el código; descargué un archivo TXT con el embed.");
+    }
+  } finally {
+    embedExportButton.disabled = false;
+  }
 });
 
 demoSelect.addEventListener("change", () => loadDemo(demoSelect.value));

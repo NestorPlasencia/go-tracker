@@ -1,6 +1,29 @@
 (async function loadSelectedDemo() {
   const errorMessage = document.querySelector("#app-loading-message");
   const demoSelector = document.querySelector("#demo-selector");
+  const requestedLanguage = new URLSearchParams(window.location.search)
+    .get("lang")
+    ?.toLowerCase()
+    .split("-")[0];
+  const loaderMessages = {
+    es: {
+      loadError: "No se pudo cargar este demo. Revisa su configuración.",
+      appError: "No se pudo iniciar la aplicación.",
+    },
+    en: {
+      loadError: "Could not load this demo. Check its configuration.",
+      appError: "Could not start the application.",
+    },
+    pt: {
+      loadError: "Não foi possível carregar este demo. Verifique a configuração.",
+      appError: "Não foi possível iniciar o aplicativo.",
+    },
+    fr: {
+      loadError: "Impossible de charger cette démo. Vérifiez sa configuration.",
+      appError: "Impossible de démarrer l’application.",
+    },
+  };
+  const messages = loaderMessages[requestedLanguage] || loaderMessages.es;
 
   try {
     const manifestResponse = await fetch("demos/manifest.json");
@@ -53,15 +76,15 @@
     const appUrl = new URL("app.js", window.location.href);
     appUrl.searchParams.set(
       "v",
-      `${data.version || selectedDemo.id}-routing-snap-1`,
+      `${data.version || selectedDemo.id}-routing-snap-3-url-language`,
     );
     script.src = appUrl.href;
     script.addEventListener("error", () => {
-      errorMessage.textContent = "No se pudo iniciar la aplicación.";
+      errorMessage.textContent = messages.appError;
     });
     document.body.append(script);
   } catch (error) {
     console.error(error);
-    errorMessage.textContent = "No se pudo cargar este demo. Revisa su configuración.";
+    errorMessage.textContent = messages.loadError;
   }
 })();
