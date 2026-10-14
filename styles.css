@@ -1428,6 +1428,7 @@ body.is-embedded .destinations-section {
 }
 
 body.is-embedded .destination-grid {
+  grid-template-columns: minmax(0, 1fr);
   gap: 12px;
   margin-top: 0;
 }

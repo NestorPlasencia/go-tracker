@@ -76,7 +76,7 @@
     const appUrl = new URL("app.js", window.location.href);
     appUrl.searchParams.set(
       "v",
-      `${data.version || selectedDemo.id}-routing-snap-3-url-language`,
+      `${data.version || selectedDemo.id}-routing-snap-4-iframe-height`,
     );
     script.src = appUrl.href;
     script.addEventListener("error", () => {
