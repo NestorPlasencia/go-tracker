@@ -745,7 +745,7 @@ function findShortestPath(graph, startKey, endKey) {
 let walkingGraph;
 let graphLoadError;
 
-fetch(DEMO_CONFIG.assets.walkways)
+fetch(DEMO_CONFIG.assets.walkways, { cache: "no-cache" })
   .then((response) => {
     if (!response.ok) {
       throw new Error(`No se pudo cargar el GeoJSON (${response.status})`);
